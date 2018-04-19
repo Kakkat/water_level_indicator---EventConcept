@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "water_level_indicator", "water_level_indicator\water_level_indicator_6_1.cproj", "{62940A49-37A9-484B-97B3-22C649FD7A61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62940A49-37A9-484B-97B3-22C649FD7A61}.Debug|AVR.ActiveCfg = Debug|AVR
+		{62940A49-37A9-484B-97B3-22C649FD7A61}.Debug|AVR.Build.0 = Debug|AVR
+		{62940A49-37A9-484B-97B3-22C649FD7A61}.Release|AVR.ActiveCfg = Release|AVR
+		{62940A49-37A9-484B-97B3-22C649FD7A61}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
