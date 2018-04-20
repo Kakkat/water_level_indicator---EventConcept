@@ -159,8 +159,11 @@ ESPRetVal CommandSend(ESP_CommandIndex Index)
 	}
 	if((Esp_Commands_a[Index].MatchCounter)==Esp_Commands_a[Index].ResposeLength)
 	{
-		Esp_Commands_a[Index].state=0;
-		Esp_Commands_a[Index].MatchCounter=0;
+		if(Index!=Wait_Command)
+		{
+			Esp_Commands_a[Index].state=0;
+		    Esp_Commands_a[Index].MatchCounter=0;
+		}
 		ConnectionFlag=0;
 		ReturnValue=ESP_CmdSndOK;
 	}
@@ -467,8 +470,8 @@ uint8_t CheckInput()
 	//uart_string(EspDataBuffer);
 	if(datagot==1)
 	{
-		//if(Esp_Commands_a[Wait_Command].MatchCounter==Esp_Commands_a[Wait_Command].ResposeLength)
-		//{ 
+		if(Esp_Commands_a[Wait_Command].MatchCounter==Esp_Commands_a[Wait_Command].ResposeLength)
+		{ 
 			Esp_Commands_a[Wait_Command].state=1;
 			Esp_Commands_a[Wait_Command].MatchCounter=0;	
 			PortStart=findpos(EspDataBuffer,0,',');
@@ -494,7 +497,7 @@ uint8_t CheckInput()
 			//RTE_WriteBufferUart(EspPortBuffer);//uart_string(EspPortBuffer);
 			//RTE_WriteBufferUart(EspDataBuffer);
 			
-		//}
+		}
 		//uart_string(EspDataBuffer);
 		datagot=0;
 	}

@@ -52,8 +52,6 @@ MddleLayer\UartTransmit.c
 
 OS\EventQ.c
 
-OS\Events.c
-
 OS\GccApplication1.c
 
 OS\OSRR.c

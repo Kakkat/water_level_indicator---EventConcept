@@ -84,7 +84,7 @@ Discarded input sections
  .rodata.str1.1
                 0x00000000        0x9 ASW/Routines.o
  .text.DebugMode
-                0x00000000       0xd6 ASW/Routines.o
+                0x00000000       0xa6 ASW/Routines.o
  .bss.DebugStates
                 0x00000000        0x1 ASW/Routines.o
  .bss.DebugArrayindex
@@ -158,10 +158,10 @@ Discarded input sections
  .bss           0x00000000        0x0 BaseLayer/UART.o
  .text.uart_read
                 0x00000000       0x10 BaseLayer/UART.o
+ .text.uart_16Uint
+                0x00000000       0xcc BaseLayer/UART.o
  .text.uart_string1
                 0x00000000       0x1e BaseLayer/UART.o
- .text.uart_16Uint
-                0x00000000       0xd4 BaseLayer/UART.o
  .text.PushInterface
                 0x00000000        0xc BaseLayer/UART.o
  .text.BufferEmpty
@@ -186,7 +186,7 @@ Discarded input sections
  .bss           0x00000000        0x0 MddleLayer/NVM_Handler.o
  .text.NVMTask  0x00000000       0xa0 MddleLayer/NVM_Handler.o
  .text.StoreNVM
-                0x00000000       0x5a MddleLayer/NVM_Handler.o
+                0x00000000       0x4a MddleLayer/NVM_Handler.o
  .rodata.str1.1
                 0x00000000        0x6 MddleLayer/NVM_Handler.o
  .text.NvmReadSync
@@ -508,7 +508,7 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x2bca
+.text           0x00000000     0x2c10
  *(.vectors)
  .vectors       0x00000000       0x68 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm328p.o
                 0x00000000                __vector_default
@@ -632,343 +632,343 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr
                 0x000005c6       0x18 ASW/ESP8266.o
                 0x000005c6                ConnectCommand
  .text.CheckInput
-                0x000005de       0xbe ASW/ESP8266.o
+                0x000005de       0xcc ASW/ESP8266.o
                 0x000005de                CheckInput
  .text.RequestWait
-                0x0000069c       0x50 ASW/ESP8266.o
-                0x0000069c                RequestWait
- .text.enable   0x000006ec        0x6 ASW/ESP8266.o
-                0x000006ec                enable
+                0x000006aa       0x50 ASW/ESP8266.o
+                0x000006aa                RequestWait
+ .text.enable   0x000006fa        0x6 ASW/ESP8266.o
+                0x000006fa                enable
  .text.checkRecievedData
-                0x000006f2       0x4a ASW/ESP8266.o
-                0x000006f2                checkRecievedData
- .text.ESPpop   0x0000073c       0x2e ASW/ESP8266.o
-                0x0000073c                ESPpop
+                0x00000700       0x4a ASW/ESP8266.o
+                0x00000700                checkRecievedData
+ .text.ESPpop   0x0000074a       0x2e ASW/ESP8266.o
+                0x0000074a                ESPpop
  .text.ESPCallBack
-                0x0000076a       0x10 ASW/ESP8266.o
-                0x0000076a                ESPCallBack
+                0x00000778       0x10 ASW/ESP8266.o
+                0x00000778                ESPCallBack
  .text.UartHandlerInit
-                0x0000077a        0x2 ASW/UartHandler.o
-                0x0000077a                UartHandlerInit
+                0x00000788        0x2 ASW/UartHandler.o
+                0x00000788                UartHandlerInit
  .text.adc_init
-                0x0000077c       0x22 BaseLayer/ADC.o
-                0x0000077c                adc_init
+                0x0000078a       0x22 BaseLayer/ADC.o
+                0x0000078a                adc_init
  .text.adc_read
-                0x0000079e       0x22 BaseLayer/ADC.o
-                0x0000079e                adc_read
+                0x000007ac       0x22 BaseLayer/ADC.o
+                0x000007ac                adc_read
  .text.ADC_State
-                0x000007c0        0x8 BaseLayer/ADC.o
-                0x000007c0                ADC_State
+                0x000007ce        0x8 BaseLayer/ADC.o
+                0x000007ce                ADC_State
  .text.ADCValue
-                0x000007c8       0x22 BaseLayer/ADC.o
-                0x000007c8                ADCValue
+                0x000007d6       0x22 BaseLayer/ADC.o
+                0x000007d6                ADCValue
  .text.__vector_21
-                0x000007ea       0x20 BaseLayer/ADC.o
-                0x000007ea                __vector_21
+                0x000007f8       0x20 BaseLayer/ADC.o
+                0x000007f8                __vector_21
  .text.PushIntoCircularBuffer
-                0x0000080a       0x2a BaseLayer/CircularQueue.o
-                0x0000080a                PushIntoCircularBuffer
+                0x00000818       0x2a BaseLayer/CircularQueue.o
+                0x00000818                PushIntoCircularBuffer
  .text.PopFromCircularBuffer
-                0x00000834       0x2e BaseLayer/CircularQueue.o
-                0x00000834                PopFromCircularBuffer
+                0x00000842       0x2e BaseLayer/CircularQueue.o
+                0x00000842                PopFromCircularBuffer
  .text.IsBuffempty
-                0x00000862        0xe BaseLayer/CircularQueue.o
-                0x00000862                IsBuffempty
+                0x00000870        0xe BaseLayer/CircularQueue.o
+                0x00000870                IsBuffempty
  .text.HeadTailDiff
-                0x00000870       0x16 BaseLayer/CircularQueue.o
-                0x00000870                HeadTailDiff
+                0x0000087e       0x16 BaseLayer/CircularQueue.o
+                0x0000087e                HeadTailDiff
  .text.TriggerUltraSonic
-                0x00000886       0x28 BaseLayer/ExtInterrupt.o
+                0x00000894       0x28 BaseLayer/ExtInterrupt.o
  .text.changeIntLogic
-                0x000008ae       0x1c BaseLayer/ExtInterrupt.o
-                0x000008ae                changeIntLogic
+                0x000008bc       0x1c BaseLayer/ExtInterrupt.o
+                0x000008bc                changeIntLogic
  .text.__vector_1
-                0x000008ca       0x76 BaseLayer/ExtInterrupt.o
-                0x000008ca                __vector_1
+                0x000008d8       0x76 BaseLayer/ExtInterrupt.o
+                0x000008d8                __vector_1
  .text.ExtIntInit
-                0x00000940       0x16 BaseLayer/ExtInterrupt.o
-                0x00000940                ExtIntInit
+                0x0000094e       0x16 BaseLayer/ExtInterrupt.o
+                0x0000094e                ExtIntInit
  .text.InterfacePulse
-                0x00000956       0xa6 BaseLayer/ExtInterrupt.o
-                0x00000956                InterfacePulse
+                0x00000964       0xa6 BaseLayer/ExtInterrupt.o
+                0x00000964                InterfacePulse
  .text.i2c_start
-                0x000009fc       0x4a BaseLayer/I2C.o
-                0x000009fc                i2c_start
+                0x00000a0a       0x4a BaseLayer/I2C.o
+                0x00000a0a                i2c_start
  .text.i2c_write
-                0x00000a46       0x24 BaseLayer/I2C.o
-                0x00000a46                i2c_write
+                0x00000a54       0x24 BaseLayer/I2C.o
+                0x00000a54                i2c_write
  .text.i2c_stop
-                0x00000a6a        0x8 BaseLayer/I2C.o
-                0x00000a6a                i2c_stop
+                0x00000a78        0x8 BaseLayer/I2C.o
+                0x00000a78                i2c_stop
  .text.ssd1306_char_font6x8
-                0x00000a72       0x50 BaseLayer/I2C.o
-                0x00000a72                ssd1306_char_font6x8
+                0x00000a80       0x50 BaseLayer/I2C.o
+                0x00000a80                ssd1306_char_font6x8
  .text.ssd1306_setpos
-                0x00000ac2       0x3c BaseLayer/I2C.o
-                0x00000ac2                ssd1306_setpos
+                0x00000ad0       0x3c BaseLayer/I2C.o
+                0x00000ad0                ssd1306_setpos
  .text.ssd1306_String_font6x8
-                0x00000afe       0x26 BaseLayer/I2C.o
-                0x00000afe                ssd1306_String_font6x8
+                0x00000b0c       0x26 BaseLayer/I2C.o
+                0x00000b0c                ssd1306_String_font6x8
  .text.ssd1306_Fill_Rectangle
-                0x00000b24       0x4c BaseLayer/I2C.o
-                0x00000b24                ssd1306_Fill_Rectangle
+                0x00000b32       0x4c BaseLayer/I2C.o
+                0x00000b32                ssd1306_Fill_Rectangle
  .text.SwitchNvmOff
-                0x00000b70        0xa BaseLayer/NVM.o
+                0x00000b7e        0xa BaseLayer/NVM.o
  .text.__vector_22
-                0x00000b7a      0x11c BaseLayer/NVM.o
-                0x00000b7a                __vector_22
+                0x00000b88      0x11c BaseLayer/NVM.o
+                0x00000b88                __vector_22
  .text.PinOutConfig
-                0x00000c96       0x4e BaseLayer/pinout.o
-                0x00000c96                PinOutConfig
+                0x00000ca4       0x4e BaseLayer/pinout.o
+                0x00000ca4                PinOutConfig
  .text.PinOutput
-                0x00000ce4       0x4e BaseLayer/pinout.o
-                0x00000ce4                PinOutput
+                0x00000cf2       0x4e BaseLayer/pinout.o
+                0x00000cf2                PinOutput
  .text.PinValue
-                0x00000d32       0x30 BaseLayer/pinout.o
-                0x00000d32                PinValue
+                0x00000d40       0x30 BaseLayer/pinout.o
+                0x00000d40                PinValue
  .text.spi_init_master
-                0x00000d62        0xc BaseLayer/SPI.o
-                0x00000d62                spi_init_master
+                0x00000d70        0xc BaseLayer/SPI.o
+                0x00000d70                spi_init_master
  .text.spi_dataorder
-                0x00000d6e       0x10 BaseLayer/SPI.o
-                0x00000d6e                spi_dataorder
+                0x00000d7c       0x10 BaseLayer/SPI.o
+                0x00000d7c                spi_dataorder
  .text.spi_clockspeed
-                0x00000d7e       0x4c BaseLayer/SPI.o
-                0x00000d7e                spi_clockspeed
+                0x00000d8c       0x4c BaseLayer/SPI.o
+                0x00000d8c                spi_clockspeed
  .text.spi_clockphase
-                0x00000dca        0x8 BaseLayer/SPI.o
-                0x00000dca                spi_clockphase
+                0x00000dd8        0x8 BaseLayer/SPI.o
+                0x00000dd8                spi_clockphase
  .text.spi_tranceiver
-                0x00000dd2        0xc BaseLayer/SPI.o
-                0x00000dd2                spi_tranceiver
+                0x00000de0        0xc BaseLayer/SPI.o
+                0x00000de0                spi_tranceiver
  .text.Timer2Enable
-                0x00000dde       0x2a BaseLayer/Timer2.o
-                0x00000dde                Timer2Enable
+                0x00000dec       0x2a BaseLayer/Timer2.o
+                0x00000dec                Timer2Enable
  .text.Timer2Disable
-                0x00000e08        0xc BaseLayer/Timer2.o
-                0x00000e08                Timer2Disable
+                0x00000e16        0xc BaseLayer/Timer2.o
+                0x00000e16                Timer2Disable
  .text.Timer2Count
-                0x00000e14       0x22 BaseLayer/Timer2.o
-                0x00000e14                Timer2Count
+                0x00000e22       0x22 BaseLayer/Timer2.o
+                0x00000e22                Timer2Count
  .text.__vector_9
-                0x00000e36       0x22 BaseLayer/Timer2.o
-                0x00000e36                __vector_9
+                0x00000e44       0x22 BaseLayer/Timer2.o
+                0x00000e44                __vector_9
  .text.ConfigureCallBack
-                0x00000e58        0xa BaseLayer/UART.o
-                0x00000e58                ConfigureCallBack
- .text.PopInterface
-                0x00000e62       0x3a BaseLayer/UART.o
-                0x00000e62                PopInterface
+                0x00000e66        0xa BaseLayer/UART.o
+                0x00000e66                ConfigureCallBack
  .text.Callhandler
-                0x00000e9c       0x12 BaseLayer/UART.o
-                0x00000e9c                Callhandler
+                0x00000e70       0x12 BaseLayer/UART.o
+                0x00000e70                Callhandler
+ .text.PopInterface
+                0x00000e82       0x3a BaseLayer/UART.o
+                0x00000e82                PopInterface
  .text.uart_init
-                0x00000eae       0x2e BaseLayer/UART.o
-                0x00000eae                uart_init
+                0x00000ebc       0x2e BaseLayer/UART.o
+                0x00000ebc                uart_init
  .text.uart_delay
-                0x00000edc       0x2c BaseLayer/UART.o
-                0x00000edc                uart_delay
- .text.uart_char
-                0x00000f08       0x18 BaseLayer/UART.o
-                0x00000f08                uart_char
- .text.uart_num
-                0x00000f20       0x5a BaseLayer/UART.o
-                0x00000f20                uart_num
+                0x00000eea       0x2c BaseLayer/UART.o
+                0x00000eea                uart_delay
  .text.uart_string
-                0x00000f7a       0x52 BaseLayer/UART.o
-                0x00000f7a                uart_string
+                0x00000f16       0x52 BaseLayer/UART.o
+                0x00000f16                uart_string
+ .text.uart_char
+                0x00000f68       0x18 BaseLayer/UART.o
+                0x00000f68                uart_char
+ .text.uart_num
+                0x00000f80       0x62 BaseLayer/UART.o
+                0x00000f80                uart_num
  .text.__vector_18
-                0x00000fcc      0x146 BaseLayer/UART.o
-                0x00000fcc                __vector_18
+                0x00000fe2      0x146 BaseLayer/UART.o
+                0x00000fe2                __vector_18
  .text.CheckUartReadyToSend
-                0x00001112       0x10 BaseLayer/UART.o
-                0x00001112                CheckUartReadyToSend
+                0x00001128       0x10 BaseLayer/UART.o
+                0x00001128                CheckUartReadyToSend
  .text.SendByte
-                0x00001122        0x6 BaseLayer/UART.o
-                0x00001122                SendByte
+                0x00001138        0x6 BaseLayer/UART.o
+                0x00001138                SendByte
  .text.ReadEveryValueADC
-                0x00001128       0xfc MddleLayer/ADCread.o
-                0x00001128                ReadEveryValueADC
+                0x0000113e       0xfc MddleLayer/ADCread.o
+                0x0000113e                ReadEveryValueADC
  .text.GetADC_Value
-                0x00001224      0x112 MddleLayer/ADCread.o
-                0x00001224                GetADC_Value
+                0x0000123a      0x112 MddleLayer/ADCread.o
+                0x0000123a                GetADC_Value
  .text.BaseTask1
-                0x00001336       0x3e MddleLayer/BaseTask.o
-                0x00001336                BaseTask1
+                0x0000134c       0x3e MddleLayer/BaseTask.o
+                0x0000134c                BaseTask1
  .text.BaseTask1Open
-                0x00001374        0x6 MddleLayer/BaseTask.o
-                0x00001374                BaseTask1Open
+                0x0000138a        0x6 MddleLayer/BaseTask.o
+                0x0000138a                BaseTask1Open
  .text.BaseTask2
-                0x0000137a       0x7a MddleLayer/BaseTask.o
-                0x0000137a                BaseTask2
+                0x00001390       0x7a MddleLayer/BaseTask.o
+                0x00001390                BaseTask2
  .text.BaseTask2Open
-                0x000013f4        0x6 MddleLayer/BaseTask.o
-                0x000013f4                BaseTask2Open
+                0x0000140a        0x6 MddleLayer/BaseTask.o
+                0x0000140a                BaseTask2Open
  .text.chartohex
-                0x000013fa       0x2c MddleLayer/DebugHandler.o
+                0x00001410       0x2c MddleLayer/DebugHandler.o
  .text.ReadRambytesNonCnt
-                0x00001426       0x8e MddleLayer/DebugHandler.o
-                0x00001426                ReadRambytesNonCnt
+                0x0000143c       0x8e MddleLayer/DebugHandler.o
+                0x0000143c                ReadRambytesNonCnt
  .text.ReadRambyte
-                0x000014b4       0x6e MddleLayer/DebugHandler.o
-                0x000014b4                ReadRambyte
+                0x000014ca       0x6e MddleLayer/DebugHandler.o
+                0x000014ca                ReadRambyte
  .text.WriteRambyte
-                0x00001522       0xa4 MddleLayer/DebugHandler.o
-                0x00001522                WriteRambyte
+                0x00001538       0xa4 MddleLayer/DebugHandler.o
+                0x00001538                WriteRambyte
  .text.DebugHandlerFunc
-                0x000015c6      0x26a MddleLayer/DebugHandler.o
-                0x000015c6                DebugHandlerFunc
+                0x000015dc      0x26a MddleLayer/DebugHandler.o
+                0x000015dc                DebugHandlerFunc
  .text.OutPutVariableRegister
-                0x00001830       0x1a MddleLayer/DebugHandler.o
-                0x00001830                OutPutVariableRegister
+                0x00001846       0x1a MddleLayer/DebugHandler.o
+                0x00001846                OutPutVariableRegister
  .text.Nvm_TableInit
-                0x0000184a       0x20 MddleLayer/EepromStructure.o
-                0x0000184a                Nvm_TableInit
+                0x00001860       0x20 MddleLayer/EepromStructure.o
+                0x00001860                Nvm_TableInit
  .text.WriteMax
-                0x0000186a       0x2e MddleLayer/MaxDisp.o
-                0x0000186a                WriteMax
- .text.InitMax  0x00001898       0xcc MddleLayer/MaxDisp.o
-                0x00001898                InitMax
+                0x00001880       0x2e MddleLayer/MaxDisp.o
+                0x00001880                WriteMax
+ .text.InitMax  0x000018ae       0xcc MddleLayer/MaxDisp.o
+                0x000018ae                InitMax
  .text.ScanlimitExpand
-                0x00001964       0x28 MddleLayer/MaxDisp.o
-                0x00001964                ScanlimitExpand
+                0x0000197a       0x28 MddleLayer/MaxDisp.o
+                0x0000197a                ScanlimitExpand
  .text.DispDigits
-                0x0000198c       0x82 MddleLayer/MaxDisp.o
-                0x0000198c                DispDigits
+                0x000019a2       0x82 MddleLayer/MaxDisp.o
+                0x000019a2                DispDigits
  .text.DispChar
-                0x00001a0e       0xde MddleLayer/MaxDisp.o
-                0x00001a0e                DispChar
+                0x00001a24       0xde MddleLayer/MaxDisp.o
+                0x00001a24                DispChar
  .text.SignalHandlerFunc
-                0x00001aec       0x7c MddleLayer/SignalHandler.o
-                0x00001aec                SignalHandlerFunc
+                0x00001b02       0x7c MddleLayer/SignalHandler.o
+                0x00001b02                SignalHandlerFunc
  .text.DataTransmit
-                0x00001b68       0x22 MddleLayer/UartTransmit.o
-                0x00001b68                DataTransmit
+                0x00001b7e       0x22 MddleLayer/UartTransmit.o
+                0x00001b7e                DataTransmit
  .text.FillUartBuffer
-                0x00001b8a       0x24 MddleLayer/UartTransmit.o
-                0x00001b8a                FillUartBuffer
+                0x00001ba0       0x24 MddleLayer/UartTransmit.o
+                0x00001ba0                FillUartBuffer
  .text.FillUartBufferSiglechar
-                0x00001bae        0xc MddleLayer/UartTransmit.o
-                0x00001bae                FillUartBufferSiglechar
+                0x00001bc4        0xc MddleLayer/UartTransmit.o
+                0x00001bc4                FillUartBufferSiglechar
  .text.TransmitBufferEmpty
-                0x00001bba       0x1e MddleLayer/UartTransmit.o
-                0x00001bba                TransmitBufferEmpty
- .text.create   0x00001bd8       0x12 OS/EventQ.o
-                0x00001bd8                create
+                0x00001bd0       0x1e MddleLayer/UartTransmit.o
+                0x00001bd0                TransmitBufferEmpty
+ .text.create   0x00001bee       0x12 OS/EventQ.o
+                0x00001bee                create
  .text.countSize
-                0x00001bea        0x6 OS/EventQ.o
-                0x00001bea                countSize
+                0x00001c00        0x6 OS/EventQ.o
+                0x00001c00                countSize
  .text.PushIntoCircularEventBuffer
-                0x00001bf0       0x74 OS/EventQ.o
-                0x00001bf0                PushIntoCircularEventBuffer
+                0x00001c06       0x74 OS/EventQ.o
+                0x00001c06                PushIntoCircularEventBuffer
  .text.PopFromCircularEventBuffer
-                0x00001c64       0x4c OS/EventQ.o
-                0x00001c64                PopFromCircularEventBuffer
+                0x00001c7a       0x4c OS/EventQ.o
+                0x00001c7a                PopFromCircularEventBuffer
  .text.PushEventInterface
-                0x00001cb0       0x46 OS/EventQ.o
-                0x00001cb0                PushEventInterface
+                0x00001cc6       0x46 OS/EventQ.o
+                0x00001cc6                PushEventInterface
  .text.PopEventInterface
-                0x00001cf6       0x52 OS/EventQ.o
-                0x00001cf6                PopEventInterface
+                0x00001d0c       0x52 OS/EventQ.o
+                0x00001d0c                PopEventInterface
  .text.__vector_16
-                0x00001d48       0x7e OS/GccApplication1.o
-                0x00001d48                __vector_16
+                0x00001d5e       0x7e OS/GccApplication1.o
+                0x00001d5e                __vector_16
  .text.set_timer
-                0x00001dc6       0x10 OS/GccApplication1.o
-                0x00001dc6                set_timer
- .text.main     0x00001dd6      0x136 OS/GccApplication1.o
-                0x00001dd6                main
+                0x00001ddc       0x10 OS/GccApplication1.o
+                0x00001ddc                set_timer
+ .text.main     0x00001dec      0x136 OS/GccApplication1.o
+                0x00001dec                main
  .text.callbackSetFunction
-                0x00001f0c       0x12 OS/OSRR.o
-                0x00001f0c                callbackSetFunction
+                0x00001f22       0x12 OS/OSRR.o
+                0x00001f22                callbackSetFunction
  .text.callbackgetFunction
-                0x00001f1e       0x12 OS/OSRR.o
-                0x00001f1e                callbackgetFunction
+                0x00001f34       0x12 OS/OSRR.o
+                0x00001f34                callbackgetFunction
  .text.num2CharArray
-                0x00001f30       0x48 OS/Task.o
- .text.task6    0x00001f78       0xa6 OS/Task.o
-                0x00001f78                task6
- .text.task1    0x0000201e      0x2da OS/Task.o
-                0x0000201e                task1
- .text.task2    0x000022f8      0x1d4 OS/Task.o
-                0x000022f8                task2
- .text.task3    0x000024cc        0xa OS/Task.o
-                0x000024cc                task3
- .text.task4    0x000024d6       0x8a OS/Task.o
-                0x000024d6                task4
- .text.task5    0x00002560      0x1c4 OS/Task.o
-                0x00002560                task5
+                0x00001f46       0x52 OS/Task.o
+ .text.task6    0x00001f98       0xa6 OS/Task.o
+                0x00001f98                task6
+ .text.task1    0x0000203e      0x2da OS/Task.o
+                0x0000203e                task1
+ .text.task2    0x00002318      0x1ec OS/Task.o
+                0x00002318                task2
+ .text.task3    0x00002504        0xa OS/Task.o
+                0x00002504                task3
+ .text.task4    0x0000250e       0x8a OS/Task.o
+                0x0000250e                task4
+ .text.task5    0x00002598      0x1c6 OS/Task.o
+                0x00002598                task5
  .text.task1Open
-                0x00002724       0x24 OS/Task.o
-                0x00002724                task1Open
+                0x0000275e       0x24 OS/Task.o
+                0x0000275e                task1Open
  .text.task2Open
-                0x00002748       0x24 OS/Task.o
-                0x00002748                task2Open
+                0x00002782       0x24 OS/Task.o
+                0x00002782                task2Open
  .text.task3Open
-                0x0000276c       0x16 OS/Task.o
-                0x0000276c                task3Open
+                0x000027a6       0x16 OS/Task.o
+                0x000027a6                task3Open
  .text.task4Open
-                0x00002782       0x56 OS/Task.o
-                0x00002782                task4Open
+                0x000027bc       0x56 OS/Task.o
+                0x000027bc                task4Open
  .text.task5Open
-                0x000027d8       0x74 OS/Task.o
-                0x000027d8                task5Open
+                0x00002812       0x80 OS/Task.o
+                0x00002812                task5Open
  .text.HookupTasks
-                0x0000284c        0xe OS/Task.o
-                0x0000284c                HookupTasks
+                0x00002892        0xe OS/Task.o
+                0x00002892                HookupTasks
  .text.NonPeriodicTaskFuncSet
-                0x0000285a       0x62 OS/Taskadd.o
-                0x0000285a                NonPeriodicTaskFuncSet
+                0x000028a0       0x62 OS/Taskadd.o
+                0x000028a0                NonPeriodicTaskFuncSet
  .text.BaseHandler
-                0x000028bc       0x24 OS/Taskadd.o
-                0x000028bc                BaseHandler
+                0x00002902       0x24 OS/Taskadd.o
+                0x00002902                BaseHandler
  .text.tasksBase
-                0x000028e0      0x108 OS/Taskadd.o
-                0x000028e0                tasksBase
- .text.tasks    0x000029e8       0xb8 OS/Taskadd.o
-                0x000029e8                tasks
+                0x00002926      0x108 OS/Taskadd.o
+                0x00002926                tasksBase
+ .text.tasks    0x00002a2e       0xb8 OS/Taskadd.o
+                0x00002a2e                tasks
  .text.NonPeriodicTaskFuncCall
-                0x00002aa0       0x5c OS/Taskadd.o
-                0x00002aa0                NonPeriodicTaskFuncCall
+                0x00002ae6       0x5c OS/Taskadd.o
+                0x00002ae6                NonPeriodicTaskFuncCall
  .text.ApplicationHookUP
-                0x00002afc       0x1a OS/Taskadd.o
-                0x00002afc                ApplicationHookUP
+                0x00002b42       0x1a OS/Taskadd.o
+                0x00002b42                ApplicationHookUP
  .text.RTEModuleFirstCh
-                0x00002b16        0x6 RTE ASW/Rte_ASW.o
-                0x00002b16                RTEModuleFirstCh
+                0x00002b5c        0x6 RTE ASW/Rte_ASW.o
+                0x00002b5c                RTEModuleFirstCh
  .text.Rte_Uart_WriteBuffer
-                0x00002b1c        0x6 RTE ASW/Rte_ASW.o
-                0x00002b1c                Rte_Uart_WriteBuffer
+                0x00002b62        0x6 RTE ASW/Rte_ASW.o
+                0x00002b62                Rte_Uart_WriteBuffer
  .text.RTE_BaseWriteCh1Data
-                0x00002b22       0x18 RTE Base/RTE_BSW.o
-                0x00002b22                RTE_BaseWriteCh1Data
+                0x00002b68       0x18 RTE Base/RTE_BSW.o
+                0x00002b68                RTE_BaseWriteCh1Data
  .text.Rte_BaseWriteUartData
-                0x00002b3a        0x6 RTE Base/RTE_BSW.o
-                0x00002b3a                Rte_BaseWriteUartData
+                0x00002b80        0x6 RTE Base/RTE_BSW.o
+                0x00002b80                Rte_BaseWriteUartData
  .text.Rte_Base2AswLAYERADCReadConnector
-                0x00002b40        0x6 RTE Middle/RTE_MiddleLayer.o
-                0x00002b40                Rte_Base2AswLAYERADCReadConnector
+                0x00002b86        0x6 RTE Middle/RTE_MiddleLayer.o
+                0x00002b86                Rte_Base2AswLAYERADCReadConnector
  .text.Rte_Base2AswLayerUartWriteBuffer
-                0x00002b46        0x6 RTE Middle/RTE_MiddleLayer.o
-                0x00002b46                Rte_Base2AswLayerUartWriteBuffer
+                0x00002b8c        0x6 RTE Middle/RTE_MiddleLayer.o
+                0x00002b8c                Rte_Base2AswLayerUartWriteBuffer
  .text.libgcc.div
-                0x00002b4c       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_divmodhi4.o)
-                0x00002b4c                _div
-                0x00002b4c                __divmodhi4
+                0x00002b92       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_divmodhi4.o)
+                0x00002b92                _div
+                0x00002b92                __divmodhi4
  .text.libgcc.mul
-                0x00002b74       0x18 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_umulhisi3.o)
-                0x00002b74                __umulhisi3
+                0x00002bba       0x18 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_umulhisi3.o)
+                0x00002bba                __umulhisi3
  .text.libgcc.div
-                0x00002b8c       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_udivmodhi4.o)
-                0x00002b8c                __udivmodhi4
+                0x00002bd2       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_udivmodhi4.o)
+                0x00002bd2                __udivmodhi4
  .text.avr-libc
-                0x00002bb4       0x12 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(strcmp.o)
-                0x00002bb4                strcmp
-                0x00002bc6                . = ALIGN (0x2)
+                0x00002bfa       0x12 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(strcmp.o)
+                0x00002bfa                strcmp
+                0x00002c0c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00002bc6        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
-                0x00002bc6                _exit
-                0x00002bc6                exit
+ .fini9         0x00002c0c        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+                0x00002c0c                _exit
+                0x00002c0c                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -987,11 +987,11 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00002bc6        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x00002c0c        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00002bca                _etext = .
+                0x00002c10                _etext = .
 
-.data           0x00800100      0x256 load address 0x00002bca
+.data           0x00800100      0x256 load address 0x00002c10
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm328p.o
@@ -1099,17 +1099,17 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr
                 0x0080023e                HexChar
  .data.charHex  0x0080024e       0x10 MddleLayer/DebugHandler.o
                 0x0080024e                charHex
- .data.data.1771
-                0x0080025e        0x1 MddleLayer/UartTransmit.o
  .data.CircularBufferOut
-                0x0080025f        0x5 MddleLayer/UartTransmit.o
-                0x0080025f                CircularBufferOut
+                0x0080025e        0x5 MddleLayer/UartTransmit.o
+                0x0080025e                CircularBufferOut
+ .data.data.1523
+                0x00800263        0x1 MddleLayer/UartTransmit.o
  .data.CircularBufferEvent
                 0x00800264        0x5 OS/EventQ.o
                 0x00800264                CircularBufferEvent
  .data.odd.1950
                 0x00800269        0x1 OS/GccApplication1.o
- .data.Toggle1.2331
+ .data.Toggle1.2032
                 0x0080026a        0x1 OS/Task.o
  .data.taskfuncbase
                 0x0080026b        0xe OS/Taskadd.o
@@ -1137,7 +1137,7 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr
                 0x00800356                _edata = .
                 0x00800356                PROVIDE (__data_end, .)
 
-.bss            0x00800356      0x284
+.bss            0x00800356      0x28b
                 0x00800356                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -1190,7 +1190,7 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr
  .bss.Status    0x008003ab        0x1 BaseLayer/ExtInterrupt.o
  .bss.timeout.1762
                 0x008003ac        0x1 BaseLayer/ExtInterrupt.o
- .bss.flag.2177
+ .bss.flag.1920
                 0x008003ad        0x1 BaseLayer/UART.o
  .bss.ADC_Array
                 0x008003ae       0x14 MddleLayer/ADCread.o
@@ -1232,120 +1232,128 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr
                 0x0080044e        0x1 OS/GccApplication1.o
  .bss.counter5ms.1941
                 0x0080044f        0x4 OS/GccApplication1.o
- .bss.tracker.2414
-                0x00800453        0x2 OS/Task.o
- .bss.fp.2393   0x00800455        0x2 OS/Task.o
- .bss.pointersave.2394
+ .bss.quality   0x00800453        0x1 OS/Task.o
+                0x00800453                quality
+ .bss.signal    0x00800454        0x1 OS/Task.o
+                0x00800454                signal
+ .bss.time1.2025
+                0x00800455        0x2 OS/Task.o
+ .bss.Init_Flag.2030
                 0x00800457        0x2 OS/Task.o
- .bss.CommunicationStates.2392
-                0x00800459        0x1 OS/Task.o
- .bss.Tc.2383   0x0080045a        0x2 OS/Task.o
- .bss.done.2380
-                0x0080045c        0x1 OS/Task.o
- .bss.ConnectionLost.2381
-                0x0080045d        0x1 OS/Task.o
- .bss.countTask4.2371
-                0x0080045e        0x2 OS/Task.o
- .bss.SWITCHCOUNT.2373
-                0x00800460        0x1 OS/Task.o
- .bss.offset.2429
-                0x00800461        0x2 OS/Task.o
- .bss.value.2427
-                0x00800463        0x2 OS/Task.o
- .bss.Errorcount.2354
-                0x00800465        0x1 OS/Task.o
- .bss.time1.2352
-                0x00800466        0x2 OS/Task.o
- .bss.ssdcount.2332
-                0x00800468        0x1 OS/Task.o
- .bss.time2.2325
-                0x00800469        0x2 OS/Task.o
- .bss.Toggle.2330
-                0x0080046b        0x1 OS/Task.o
- .bss.COUNT.2326
-                0x0080046c        0x2 OS/Task.o
- .bss.DownCounter.2328
-                0x0080046e        0x2 OS/Task.o
- .bss.Upcounter.2327
-                0x00800470        0x2 OS/Task.o
- .bss.Init_Flag.2329
-                0x00800472        0x2 OS/Task.o
- .bss.time1.2324
-                0x00800474        0x2 OS/Task.o
- .bss.EspConnected
-                0x00800476        0x1 OS/Task.o
- .bss.TankSize  0x00800477        0x2 OS/Task.o
- .bss.hours     0x00800479        0x4 OS/Task.o
- .bss.f         0x0080047d        0x1 OS/Task.o
- .bss.quality   0x0080047e        0x1 OS/Task.o
-                0x0080047e                quality
- .bss.signal    0x0080047f        0x1 OS/Task.o
-                0x0080047f                signal
+ .bss.TankSize  0x00800459        0x2 OS/Task.o
  .bss.SensorValue
-                0x00800480        0x1 OS/Task.o
+                0x0080045b        0x1 OS/Task.o
+ .bss.Upcounter.2028
+                0x0080045c        0x2 OS/Task.o
+ .bss.DownCounter.2029
+                0x0080045e        0x2 OS/Task.o
+ .bss.COUNT.2027
+                0x00800460        0x2 OS/Task.o
+ .bss.Toggle.2031
+                0x00800462        0x1 OS/Task.o
+ .bss.time2.2026
+                0x00800463        0x2 OS/Task.o
+ .bss.ssdcount.2033
+                0x00800465        0x1 OS/Task.o
+ .bss.time1.2053
+                0x00800466        0x2 OS/Task.o
+ .bss.Errorcount.2055
+                0x00800468        0x1 OS/Task.o
+ .bss.onebyk.2131
+                0x00800469        0x2 OS/Task.o
+ .bss.value.2128
+                0x0080046b        0x2 OS/Task.o
+ .bss.offset.2130
+                0x0080046d        0x2 OS/Task.o
+ .bss.previousvalue.2129
+                0x0080046f        0x2 OS/Task.o
+ .bss.SWITCHCOUNT.2074
+                0x00800471        0x1 OS/Task.o
+ .bss.countTask4.2072
+                0x00800472        0x2 OS/Task.o
+ .bss.hours     0x00800474        0x4 OS/Task.o
+ .bss.f         0x00800478        0x1 OS/Task.o
+ .bss.ConnectionLost.2082
+                0x00800479        0x1 OS/Task.o
  .bss.ESP_flags
-                0x00800481        0x1 OS/Task.o
+                0x0080047a        0x1 OS/Task.o
+ .bss.done.2081
+                0x0080047b        0x1 OS/Task.o
+ .bss.Tc.2084   0x0080047c        0x2 OS/Task.o
+ .bss.send.2083
+                0x0080047e        0x1 OS/Task.o
+ .bss.EspConnected
+                0x0080047f        0x1 OS/Task.o
+ .bss.CommunicationStates.2093
+                0x00800480        0x1 OS/Task.o
+ .bss.pointersave.2095
+                0x00800481        0x2 OS/Task.o
+ .bss.fp.2094   0x00800483        0x2 OS/Task.o
+ .bss.tracker.2115
+                0x00800485        0x2 OS/Task.o
+ .bss.a         0x00800487        0x1 OS/Task.o
+ .bss.c         0x00800488        0x1 OS/Task.o
  .bss.NonPeriodictaskArr
-                0x00800482       0x19 OS/Taskadd.o
-                0x00800482                NonPeriodictaskArr
+                0x00800489       0x19 OS/Taskadd.o
+                0x00800489                NonPeriodictaskArr
  .bss.opentask.1967
-                0x0080049b        0x1 OS/Taskadd.o
- .bss.openDone  0x0080049c        0x1 OS/Taskadd.o
+                0x008004a2        0x1 OS/Taskadd.o
+ .bss.openDone  0x008004a3        0x1 OS/Taskadd.o
  .bss.opentaskbase.1978
-                0x0080049d        0x1 OS/Taskadd.o
+                0x008004a4        0x1 OS/Taskadd.o
  .bss.tasktime.1992
-                0x0080049e        0x2 OS/Taskadd.o
+                0x008004a5        0x2 OS/Taskadd.o
  *(COMMON)
- COMMON         0x008004a0        0xf ASW/ESP8266.o
-                0x008004a0                UartEvents
-                0x008004a1                data_in
-                0x008004a6                r
-                0x008004a7                Sendstatus
-                0x008004a8                callbackFunction
-                0x008004aa                Data_Count
-                0x008004ab                event
-                0x008004ac                command_ready
-                0x008004ad                espdata
-                0x008004ae                Esp_Index
- COMMON         0x008004af        0x7 ASW/Routines.o
-                0x008004af                Nvm_Table_t
-                0x008004b5                eventount
- COMMON         0x008004b6        0x4 BaseLayer/ExtInterrupt.o
-                0x008004b6                TimeReady
-                0x008004b7                TimerValue
-                0x008004b9                overflowfag
- COMMON         0x008004ba        0x9 BaseLayer/NVM.o
-                0x008004ba                IndexNvmCount
-                0x008004bb                message
-                0x008004bd                eepromaddress
-                0x008004bf                WriteorRead
-                0x008004c0                eepromaddressCopy
-                0x008004c2                WriteSize
- COMMON         0x008004c3       0x64 BaseLayer/UART.o
-                0x008004c3                ESPUartData
- COMMON         0x00800527       0x2a MddleLayer/DebugHandler.o
-                0x00800527                Datastore
-                0x0080053b                argp1
-                0x0080053d                VariableManager_t
- COMMON         0x00800551       0x5a OS/EventQ.o
-                0x00800551                eQ
- COMMON         0x008005ab       0x1a OS/GccApplication1.o
-                0x008005ab                ADC_Array
-                0x008005bf                e
- COMMON         0x008005c5       0x14 OS/OSRR.o
-                0x008005c5                callbackarray
- COMMON         0x008005d9        0x1 OS/Task.o
-                0x008005d9                Sigout
-                0x008005da                PROVIDE (__bss_end, .)
-                0x00002bca                __data_load_start = LOADADDR (.data)
-                0x00002e20                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x008004a7        0xf ASW/ESP8266.o
+                0x008004a7                UartEvents
+                0x008004a8                data_in
+                0x008004ad                r
+                0x008004ae                Sendstatus
+                0x008004af                callbackFunction
+                0x008004b1                Data_Count
+                0x008004b2                event
+                0x008004b3                command_ready
+                0x008004b4                espdata
+                0x008004b5                Esp_Index
+ COMMON         0x008004b6        0x7 ASW/Routines.o
+                0x008004b6                Nvm_Table_t
+                0x008004bc                eventount
+ COMMON         0x008004bd        0x4 BaseLayer/ExtInterrupt.o
+                0x008004bd                TimeReady
+                0x008004be                TimerValue
+                0x008004c0                overflowfag
+ COMMON         0x008004c1        0x9 BaseLayer/NVM.o
+                0x008004c1                IndexNvmCount
+                0x008004c2                message
+                0x008004c4                eepromaddress
+                0x008004c6                WriteorRead
+                0x008004c7                eepromaddressCopy
+                0x008004c9                WriteSize
+ COMMON         0x008004ca       0x64 BaseLayer/UART.o
+                0x008004ca                ESPUartData
+ COMMON         0x0080052e       0x2a MddleLayer/DebugHandler.o
+                0x0080052e                Datastore
+                0x00800542                argp1
+                0x00800544                VariableManager_t
+ COMMON         0x00800558       0x5a OS/EventQ.o
+                0x00800558                eQ
+ COMMON         0x008005b2       0x1a OS/GccApplication1.o
+                0x008005b2                ADC_Array
+                0x008005c6                e
+ COMMON         0x008005cc       0x14 OS/OSRR.o
+                0x008005cc                callbackarray
+ COMMON         0x008005e0        0x1 OS/Task.o
+                0x008005e0                Sigout
+                0x008005e1                PROVIDE (__bss_end, .)
+                0x00002c10                __data_load_start = LOADADDR (.data)
+                0x00002e66                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008005da        0x0
-                0x008005da                PROVIDE (__noinit_start, .)
+.noinit         0x008005e1        0x0
+                0x008005e1                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x008005da                PROVIDE (__noinit_end, .)
-                0x008005da                _end = .
-                0x008005da                PROVIDE (__heap_start, .)
+                0x008005e1                PROVIDE (__noinit_end, .)
+                0x008005e1                _end = .
+                0x008005e1                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -1388,7 +1396,7 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr
 .stab.indexstr
  *(.stab.indexstr)
 
-.comment        0x00000000       0x5f
+.comment        0x00000000       0x2f
  *(.comment)
  .comment       0x00000000       0x2f ASW/BlinkCode.o
                                  0x30 (size before relaxing)
@@ -1405,8 +1413,7 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr
  .comment       0x00000000       0x30 BaseLayer/pinout.o
  .comment       0x00000000       0x30 BaseLayer/SPI.o
  .comment       0x00000000       0x30 BaseLayer/Timer2.o
- .comment       0x0000002f       0x30 BaseLayer/UART.o
-                                 0x31 (size before relaxing)
+ .comment       0x00000000       0x30 BaseLayer/UART.o
  .comment       0x00000000       0x30 MddleLayer/ADCread.o
  .comment       0x00000000       0x30 MddleLayer/ADCTop.o
  .comment       0x00000000       0x30 MddleLayer/BaseTask.o
@@ -1415,11 +1422,11 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr
  .comment       0x00000000       0x30 MddleLayer/MaxDisp.o
  .comment       0x00000000       0x30 MddleLayer/NVM_Handler.o
  .comment       0x00000000       0x30 MddleLayer/SignalHandler.o
- .comment       0x00000000       0x31 MddleLayer/UartTransmit.o
+ .comment       0x00000000       0x30 MddleLayer/UartTransmit.o
  .comment       0x00000000       0x30 OS/EventQ.o
  .comment       0x00000000       0x30 OS/GccApplication1.o
  .comment       0x00000000       0x30 OS/OSRR.o
- .comment       0x00000000       0x31 OS/Task.o
+ .comment       0x00000000       0x30 OS/Task.o
  .comment       0x00000000       0x30 OS/Taskadd.o
  .comment       0x00000000       0x30 RTE ASW/Rte_ASW.o
  .comment       0x00000000       0x30 RTE Base/RTE_BSW.o
@@ -1511,254 +1518,254 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x92c4
+.debug_info     0x00000000     0x93d7
  *(.debug_info)
  .debug_info    0x00000000      0x1d2 ASW/BlinkCode.o
  .debug_info    0x000001d2     0x1088 ASW/ESP8266.o
- .debug_info    0x0000125a      0x404 ASW/Routines.o
- .debug_info    0x0000165e      0x184 ASW/StringOp.o
- .debug_info    0x000017e2      0x20e ASW/UartHandler.o
- .debug_info    0x000019f0      0x1db BaseLayer/ADC.o
- .debug_info    0x00001bcb       0x86 BaseLayer/BaseTasks.o
- .debug_info    0x00001c51      0x2a7 BaseLayer/CircularQueue.o
- .debug_info    0x00001ef8      0x4ce BaseLayer/ExtInterrupt.o
- .debug_info    0x000023c6      0x87d BaseLayer/I2C.o
- .debug_info    0x00002c43      0x2b3 BaseLayer/NVM.o
- .debug_info    0x00002ef6      0x2c3 BaseLayer/pinout.o
- .debug_info    0x000031b9      0x1a2 BaseLayer/SPI.o
- .debug_info    0x0000335b      0x1b6 BaseLayer/Timer2.o
- .debug_info    0x00003511      0x82a BaseLayer/UART.o
- .debug_info    0x00003d3b      0x389 MddleLayer/ADCread.o
- .debug_info    0x000040c4      0x332 MddleLayer/BaseTask.o
- .debug_info    0x000043f6      0x65b MddleLayer/DebugHandler.o
- .debug_info    0x00004a51      0x106 MddleLayer/EepromStructure.o
- .debug_info    0x00004b57      0x856 MddleLayer/MaxDisp.o
- .debug_info    0x000053ad      0x46c MddleLayer/NVM_Handler.o
- .debug_info    0x00005819      0x14b MddleLayer/SignalHandler.o
- .debug_info    0x00005964      0x371 MddleLayer/UartTransmit.o
- .debug_info    0x00005cd5      0x607 OS/EventQ.o
- .debug_info    0x000062dc      0x6fd OS/GccApplication1.o
- .debug_info    0x000069d9      0x25e OS/OSRR.o
- .debug_info    0x00006c37     0x142a OS/Task.o
- .debug_info    0x00008061      0x819 OS/Taskadd.o
- .debug_info    0x0000887a      0x1a7 RTE ASW/Rte_ASW.o
- .debug_info    0x00008a21      0x1ea RTE Base/RTE_BSW.o
- .debug_info    0x00008c0b      0x2d1 RTE Base/Rte_Uart.o
- .debug_info    0x00008edc      0x1ab RTE Middle/RTE_MiddleLayer.o
- .debug_info    0x00009087      0x23d c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .debug_info    0x0000125a      0x36b ASW/Routines.o
+ .debug_info    0x000015c5      0x184 ASW/StringOp.o
+ .debug_info    0x00001749      0x20e ASW/UartHandler.o
+ .debug_info    0x00001957      0x1db BaseLayer/ADC.o
+ .debug_info    0x00001b32       0x86 BaseLayer/BaseTasks.o
+ .debug_info    0x00001bb8      0x2a7 BaseLayer/CircularQueue.o
+ .debug_info    0x00001e5f      0x4ce BaseLayer/ExtInterrupt.o
+ .debug_info    0x0000232d      0x87d BaseLayer/I2C.o
+ .debug_info    0x00002baa      0x2b3 BaseLayer/NVM.o
+ .debug_info    0x00002e5d      0x2c3 BaseLayer/pinout.o
+ .debug_info    0x00003120      0x1a2 BaseLayer/SPI.o
+ .debug_info    0x000032c2      0x1b6 BaseLayer/Timer2.o
+ .debug_info    0x00003478      0x886 BaseLayer/UART.o
+ .debug_info    0x00003cfe      0x389 MddleLayer/ADCread.o
+ .debug_info    0x00004087      0x332 MddleLayer/BaseTask.o
+ .debug_info    0x000043b9      0x65b MddleLayer/DebugHandler.o
+ .debug_info    0x00004a14      0x106 MddleLayer/EepromStructure.o
+ .debug_info    0x00004b1a      0x856 MddleLayer/MaxDisp.o
+ .debug_info    0x00005370      0x43e MddleLayer/NVM_Handler.o
+ .debug_info    0x000057ae      0x14b MddleLayer/SignalHandler.o
+ .debug_info    0x000058f9      0x3ca MddleLayer/UartTransmit.o
+ .debug_info    0x00005cc3      0x607 OS/EventQ.o
+ .debug_info    0x000062ca      0x6fd OS/GccApplication1.o
+ .debug_info    0x000069c7      0x25e OS/OSRR.o
+ .debug_info    0x00006c25     0x154f OS/Task.o
+ .debug_info    0x00008174      0x819 OS/Taskadd.o
+ .debug_info    0x0000898d      0x1a7 RTE ASW/Rte_ASW.o
+ .debug_info    0x00008b34      0x1ea RTE Base/RTE_BSW.o
+ .debug_info    0x00008d1e      0x2d1 RTE Base/Rte_Uart.o
+ .debug_info    0x00008fef      0x1ab RTE Middle/RTE_MiddleLayer.o
+ .debug_info    0x0000919a      0x23d c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000     0x3461
+.debug_abbrev   0x00000000     0x3532
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x11c ASW/BlinkCode.o
  .debug_abbrev  0x0000011c      0x3fc ASW/ESP8266.o
- .debug_abbrev  0x00000518      0x219 ASW/Routines.o
- .debug_abbrev  0x00000731       0xe2 ASW/StringOp.o
- .debug_abbrev  0x00000813      0x14d ASW/UartHandler.o
- .debug_abbrev  0x00000960      0x13e BaseLayer/ADC.o
- .debug_abbrev  0x00000a9e       0x51 BaseLayer/BaseTasks.o
- .debug_abbrev  0x00000aef      0x11f BaseLayer/CircularQueue.o
- .debug_abbrev  0x00000c0e      0x256 BaseLayer/ExtInterrupt.o
- .debug_abbrev  0x00000e64      0x1f3 BaseLayer/I2C.o
- .debug_abbrev  0x00001057      0x17f BaseLayer/NVM.o
- .debug_abbrev  0x000011d6      0x13a BaseLayer/pinout.o
- .debug_abbrev  0x00001310       0xcf BaseLayer/SPI.o
- .debug_abbrev  0x000013df       0xd9 BaseLayer/Timer2.o
- .debug_abbrev  0x000014b8      0x251 BaseLayer/UART.o
- .debug_abbrev  0x00001709      0x1ab MddleLayer/ADCread.o
- .debug_abbrev  0x000018b4      0x14a MddleLayer/BaseTask.o
- .debug_abbrev  0x000019fe      0x205 MddleLayer/DebugHandler.o
- .debug_abbrev  0x00001c03       0xb3 MddleLayer/EepromStructure.o
- .debug_abbrev  0x00001cb6      0x186 MddleLayer/MaxDisp.o
- .debug_abbrev  0x00001e3c      0x1b2 MddleLayer/NVM_Handler.o
- .debug_abbrev  0x00001fee       0xed MddleLayer/SignalHandler.o
- .debug_abbrev  0x000020db      0x165 MddleLayer/UartTransmit.o
- .debug_abbrev  0x00002240      0x25f OS/EventQ.o
- .debug_abbrev  0x0000249f      0x2b9 OS/GccApplication1.o
- .debug_abbrev  0x00002758      0x191 OS/OSRR.o
- .debug_abbrev  0x000028e9      0x3c7 OS/Task.o
- .debug_abbrev  0x00002cb0      0x2cf OS/Taskadd.o
- .debug_abbrev  0x00002f7f       0xab RTE ASW/Rte_ASW.o
- .debug_abbrev  0x0000302a      0x10a RTE Base/RTE_BSW.o
- .debug_abbrev  0x00003134      0x16d RTE Base/Rte_Uart.o
- .debug_abbrev  0x000032a1       0xc7 RTE Middle/RTE_MiddleLayer.o
- .debug_abbrev  0x00003368       0xf9 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .debug_abbrev  0x00000518      0x1d9 ASW/Routines.o
+ .debug_abbrev  0x000006f1       0xe2 ASW/StringOp.o
+ .debug_abbrev  0x000007d3      0x14d ASW/UartHandler.o
+ .debug_abbrev  0x00000920      0x13e BaseLayer/ADC.o
+ .debug_abbrev  0x00000a5e       0x51 BaseLayer/BaseTasks.o
+ .debug_abbrev  0x00000aaf      0x11f BaseLayer/CircularQueue.o
+ .debug_abbrev  0x00000bce      0x256 BaseLayer/ExtInterrupt.o
+ .debug_abbrev  0x00000e24      0x1f3 BaseLayer/I2C.o
+ .debug_abbrev  0x00001017      0x17f BaseLayer/NVM.o
+ .debug_abbrev  0x00001196      0x13a BaseLayer/pinout.o
+ .debug_abbrev  0x000012d0       0xcf BaseLayer/SPI.o
+ .debug_abbrev  0x0000139f       0xd9 BaseLayer/Timer2.o
+ .debug_abbrev  0x00001478      0x297 BaseLayer/UART.o
+ .debug_abbrev  0x0000170f      0x1ab MddleLayer/ADCread.o
+ .debug_abbrev  0x000018ba      0x14a MddleLayer/BaseTask.o
+ .debug_abbrev  0x00001a04      0x205 MddleLayer/DebugHandler.o
+ .debug_abbrev  0x00001c09       0xb3 MddleLayer/EepromStructure.o
+ .debug_abbrev  0x00001cbc      0x186 MddleLayer/MaxDisp.o
+ .debug_abbrev  0x00001e42      0x1d0 MddleLayer/NVM_Handler.o
+ .debug_abbrev  0x00002012       0xed MddleLayer/SignalHandler.o
+ .debug_abbrev  0x000020ff      0x1b0 MddleLayer/UartTransmit.o
+ .debug_abbrev  0x000022af      0x25f OS/EventQ.o
+ .debug_abbrev  0x0000250e      0x2b9 OS/GccApplication1.o
+ .debug_abbrev  0x000027c7      0x191 OS/OSRR.o
+ .debug_abbrev  0x00002958      0x429 OS/Task.o
+ .debug_abbrev  0x00002d81      0x2cf OS/Taskadd.o
+ .debug_abbrev  0x00003050       0xab RTE ASW/Rte_ASW.o
+ .debug_abbrev  0x000030fb      0x10a RTE Base/RTE_BSW.o
+ .debug_abbrev  0x00003205      0x16d RTE Base/Rte_Uart.o
+ .debug_abbrev  0x00003372       0xc7 RTE Middle/RTE_MiddleLayer.o
+ .debug_abbrev  0x00003439       0xf9 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
 
-.debug_line     0x00000000     0x3e81
+.debug_line     0x00000000     0x3905
  *(.debug_line)
  .debug_line    0x00000000      0x115 ASW/BlinkCode.o
- .debug_line    0x00000115      0x401 ASW/ESP8266.o
- .debug_line    0x00000516      0x15b ASW/Routines.o
- .debug_line    0x00000671      0x108 ASW/StringOp.o
- .debug_line    0x00000779      0x175 ASW/UartHandler.o
- .debug_line    0x000008ee      0x145 BaseLayer/ADC.o
- .debug_line    0x00000a33       0xde BaseLayer/BaseTasks.o
- .debug_line    0x00000b11      0x14b BaseLayer/CircularQueue.o
- .debug_line    0x00000c5c      0x227 BaseLayer/ExtInterrupt.o
- .debug_line    0x00000e83      0x2cc BaseLayer/I2C.o
- .debug_line    0x0000114f      0x142 BaseLayer/NVM.o
- .debug_line    0x00001291      0x10e BaseLayer/pinout.o
- .debug_line    0x0000139f      0x13b BaseLayer/SPI.o
- .debug_line    0x000014da      0x12c BaseLayer/Timer2.o
- .debug_line    0x00001606      0x4d0 BaseLayer/UART.o
- .debug_line    0x00001ad6      0x168 MddleLayer/ADCread.o
- .debug_line    0x00001c3e        0x0 MddleLayer/ADCTop.o
- .debug_line    0x00001c3e      0x178 MddleLayer/BaseTask.o
- .debug_line    0x00001db6      0x241 MddleLayer/DebugHandler.o
- .debug_line    0x00001ff7       0xfd MddleLayer/EepromStructure.o
- .debug_line    0x000020f4      0x1a5 MddleLayer/MaxDisp.o
- .debug_line    0x00002299      0x167 MddleLayer/NVM_Handler.o
- .debug_line    0x00002400      0x10d MddleLayer/SignalHandler.o
- .debug_line    0x0000250d      0x176 MddleLayer/UartTransmit.o
- .debug_line    0x00002683      0x237 OS/EventQ.o
- .debug_line    0x000028ba      0x2a9 OS/GccApplication1.o
- .debug_line    0x00002b63      0x14f OS/OSRR.o
- .debug_line    0x00002cb2      0x82e OS/Task.o
- .debug_line    0x000034e0      0x294 OS/Taskadd.o
- .debug_line    0x00003774       0xfa RTE ASW/Rte_ASW.o
- .debug_line    0x0000386e      0x16d RTE Base/RTE_BSW.o
- .debug_line    0x000039db      0x194 RTE Base/Rte_Uart.o
- .debug_line    0x00003b6f      0x104 RTE Middle/RTE_MiddleLayer.o
- .debug_line    0x00003c73      0x20e c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .debug_line    0x00000115      0x403 ASW/ESP8266.o
+ .debug_line    0x00000518      0x158 ASW/Routines.o
+ .debug_line    0x00000670      0x108 ASW/StringOp.o
+ .debug_line    0x00000778      0x175 ASW/UartHandler.o
+ .debug_line    0x000008ed      0x145 BaseLayer/ADC.o
+ .debug_line    0x00000a32       0xde BaseLayer/BaseTasks.o
+ .debug_line    0x00000b10      0x14b BaseLayer/CircularQueue.o
+ .debug_line    0x00000c5b      0x227 BaseLayer/ExtInterrupt.o
+ .debug_line    0x00000e82      0x2cc BaseLayer/I2C.o
+ .debug_line    0x0000114e      0x142 BaseLayer/NVM.o
+ .debug_line    0x00001290      0x10e BaseLayer/pinout.o
+ .debug_line    0x0000139e      0x13b BaseLayer/SPI.o
+ .debug_line    0x000014d9      0x12c BaseLayer/Timer2.o
+ .debug_line    0x00001605      0x316 BaseLayer/UART.o
+ .debug_line    0x0000191b      0x168 MddleLayer/ADCread.o
+ .debug_line    0x00001a83        0x0 MddleLayer/ADCTop.o
+ .debug_line    0x00001a83      0x178 MddleLayer/BaseTask.o
+ .debug_line    0x00001bfb      0x241 MddleLayer/DebugHandler.o
+ .debug_line    0x00001e3c       0xfd MddleLayer/EepromStructure.o
+ .debug_line    0x00001f39      0x1a5 MddleLayer/MaxDisp.o
+ .debug_line    0x000020de      0x166 MddleLayer/NVM_Handler.o
+ .debug_line    0x00002244      0x10d MddleLayer/SignalHandler.o
+ .debug_line    0x00002351      0x177 MddleLayer/UartTransmit.o
+ .debug_line    0x000024c8      0x237 OS/EventQ.o
+ .debug_line    0x000026ff      0x2a9 OS/GccApplication1.o
+ .debug_line    0x000029a8      0x14f OS/OSRR.o
+ .debug_line    0x00002af7      0x46d OS/Task.o
+ .debug_line    0x00002f64      0x294 OS/Taskadd.o
+ .debug_line    0x000031f8       0xfa RTE ASW/Rte_ASW.o
+ .debug_line    0x000032f2      0x16d RTE Base/RTE_BSW.o
+ .debug_line    0x0000345f      0x194 RTE Base/Rte_Uart.o
+ .debug_line    0x000035f3      0x104 RTE Middle/RTE_MiddleLayer.o
+ .debug_line    0x000036f7      0x20e c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
 
-.debug_frame    0x00000000     0x1460
+.debug_frame    0x00000000     0x1470
  *(.debug_frame)
  .debug_frame   0x00000000       0x34 ASW/BlinkCode.o
- .debug_frame   0x00000034      0x248 ASW/ESP8266.o
- .debug_frame   0x0000027c       0x34 ASW/Routines.o
- .debug_frame   0x000002b0       0x50 ASW/StringOp.o
- .debug_frame   0x00000300       0x44 ASW/UartHandler.o
- .debug_frame   0x00000344       0x74 BaseLayer/ADC.o
- .debug_frame   0x000003b8       0x24 BaseLayer/BaseTasks.o
- .debug_frame   0x000003dc       0x54 BaseLayer/CircularQueue.o
- .debug_frame   0x00000430       0xb8 BaseLayer/ExtInterrupt.o
- .debug_frame   0x000004e8      0x20c BaseLayer/I2C.o
- .debug_frame   0x000006f4       0xac BaseLayer/NVM.o
- .debug_frame   0x000007a0       0x44 BaseLayer/pinout.o
- .debug_frame   0x000007e4       0x64 BaseLayer/SPI.o
- .debug_frame   0x00000848       0x70 BaseLayer/Timer2.o
- .debug_frame   0x000008b8      0x1e4 BaseLayer/UART.o
- .debug_frame   0x00000a9c       0x50 MddleLayer/ADCread.o
- .debug_frame   0x00000aec       0x74 MddleLayer/BaseTask.o
- .debug_frame   0x00000b60      0x10c MddleLayer/DebugHandler.o
- .debug_frame   0x00000c6c       0x24 MddleLayer/EepromStructure.o
- .debug_frame   0x00000c90       0xa0 MddleLayer/MaxDisp.o
- .debug_frame   0x00000d30       0x5c MddleLayer/NVM_Handler.o
- .debug_frame   0x00000d8c       0x30 MddleLayer/SignalHandler.o
- .debug_frame   0x00000dbc       0x60 MddleLayer/UartTransmit.o
- .debug_frame   0x00000e1c      0x184 OS/EventQ.o
- .debug_frame   0x00000fa0       0x74 OS/GccApplication1.o
- .debug_frame   0x00001014       0x54 OS/OSRR.o
- .debug_frame   0x00001068      0x158 OS/Task.o
- .debug_frame   0x000011c0      0x100 OS/Taskadd.o
- .debug_frame   0x000012c0       0x44 RTE ASW/Rte_ASW.o
- .debug_frame   0x00001304       0x5c RTE Base/RTE_BSW.o
- .debug_frame   0x00001360       0x54 RTE Base/Rte_Uart.o
- .debug_frame   0x000013b4       0x44 RTE Middle/RTE_MiddleLayer.o
- .debug_frame   0x000013f8       0x68 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .debug_frame   0x00000034      0x244 ASW/ESP8266.o
+ .debug_frame   0x00000278       0x34 ASW/Routines.o
+ .debug_frame   0x000002ac       0x50 ASW/StringOp.o
+ .debug_frame   0x000002fc       0x44 ASW/UartHandler.o
+ .debug_frame   0x00000340       0x74 BaseLayer/ADC.o
+ .debug_frame   0x000003b4       0x24 BaseLayer/BaseTasks.o
+ .debug_frame   0x000003d8       0x54 BaseLayer/CircularQueue.o
+ .debug_frame   0x0000042c       0xb8 BaseLayer/ExtInterrupt.o
+ .debug_frame   0x000004e4      0x20c BaseLayer/I2C.o
+ .debug_frame   0x000006f0       0xac BaseLayer/NVM.o
+ .debug_frame   0x0000079c       0x44 BaseLayer/pinout.o
+ .debug_frame   0x000007e0       0x64 BaseLayer/SPI.o
+ .debug_frame   0x00000844       0x70 BaseLayer/Timer2.o
+ .debug_frame   0x000008b4      0x1ec BaseLayer/UART.o
+ .debug_frame   0x00000aa0       0x50 MddleLayer/ADCread.o
+ .debug_frame   0x00000af0       0x74 MddleLayer/BaseTask.o
+ .debug_frame   0x00000b64      0x10c MddleLayer/DebugHandler.o
+ .debug_frame   0x00000c70       0x24 MddleLayer/EepromStructure.o
+ .debug_frame   0x00000c94       0xa0 MddleLayer/MaxDisp.o
+ .debug_frame   0x00000d34       0x5c MddleLayer/NVM_Handler.o
+ .debug_frame   0x00000d90       0x30 MddleLayer/SignalHandler.o
+ .debug_frame   0x00000dc0       0x60 MddleLayer/UartTransmit.o
+ .debug_frame   0x00000e20      0x184 OS/EventQ.o
+ .debug_frame   0x00000fa4       0x74 OS/GccApplication1.o
+ .debug_frame   0x00001018       0x54 OS/OSRR.o
+ .debug_frame   0x0000106c      0x164 OS/Task.o
+ .debug_frame   0x000011d0      0x100 OS/Taskadd.o
+ .debug_frame   0x000012d0       0x44 RTE ASW/Rte_ASW.o
+ .debug_frame   0x00001314       0x5c RTE Base/RTE_BSW.o
+ .debug_frame   0x00001370       0x54 RTE Base/Rte_Uart.o
+ .debug_frame   0x000013c4       0x44 RTE Middle/RTE_MiddleLayer.o
+ .debug_frame   0x00001408       0x68 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
 
-.debug_str      0x00000000     0x1d88
+.debug_str      0x00000000     0x1cdd
  *(.debug_str)
  .debug_str     0x00000000      0x14d ASW/BlinkCode.o
                                 0x187 (size before relaxing)
  .debug_str     0x0000014d      0x59b ASW/ESP8266.o
                                 0x6d1 (size before relaxing)
- .debug_str     0x000006e8       0xc9 ASW/Routines.o
-                                0x209 (size before relaxing)
- .debug_str     0x000007b1       0x39 ASW/StringOp.o
+ .debug_str     0x000006e8       0xc0 ASW/Routines.o
+                                0x200 (size before relaxing)
+ .debug_str     0x000007a8       0x39 ASW/StringOp.o
                                 0x10f (size before relaxing)
- .debug_str     0x000007ea       0x8b ASW/UartHandler.o
+ .debug_str     0x000007e1       0x8b ASW/UartHandler.o
                                 0x1a7 (size before relaxing)
- .debug_str     0x00000875       0x52 BaseLayer/ADC.o
+ .debug_str     0x0000086c       0x52 BaseLayer/ADC.o
                                 0x15b (size before relaxing)
- .debug_str     0x000008c7       0x28 BaseLayer/BaseTasks.o
+ .debug_str     0x000008be       0x28 BaseLayer/BaseTasks.o
                                  0xe8 (size before relaxing)
- .debug_str     0x000008ef       0x98 BaseLayer/CircularQueue.o
+ .debug_str     0x000008e6       0x98 BaseLayer/CircularQueue.o
                                 0x1e9 (size before relaxing)
- .debug_str     0x00000987       0xf5 BaseLayer/ExtInterrupt.o
+ .debug_str     0x0000097e       0xf5 BaseLayer/ExtInterrupt.o
                                 0x276 (size before relaxing)
- .debug_str     0x00000a7c      0x14f BaseLayer/I2C.o
+ .debug_str     0x00000a73      0x14f BaseLayer/I2C.o
                                 0x249 (size before relaxing)
- .debug_str     0x00000bcb       0xb1 BaseLayer/NVM.o
+ .debug_str     0x00000bc2       0xb1 BaseLayer/NVM.o
                                 0x1e7 (size before relaxing)
- .debug_str     0x00000c7c       0x50 BaseLayer/pinout.o
+ .debug_str     0x00000c73       0x50 BaseLayer/pinout.o
                                 0x185 (size before relaxing)
- .debug_str     0x00000ccc       0xbd BaseLayer/SPI.o
+ .debug_str     0x00000cc3       0xbd BaseLayer/SPI.o
                                 0x194 (size before relaxing)
- .debug_str     0x00000d89       0x2f BaseLayer/Timer2.o
+ .debug_str     0x00000d80       0x2f BaseLayer/Timer2.o
                                 0x172 (size before relaxing)
- .debug_str     0x00000db8      0x1af BaseLayer/UART.o
-                                0x41d (size before relaxing)
- .debug_str     0x00000f67      0x10a MddleLayer/ADCread.o
+ .debug_str     0x00000daf      0x115 BaseLayer/UART.o
+                                0x38f (size before relaxing)
+ .debug_str     0x00000ec4      0x10a MddleLayer/ADCread.o
                                 0x25c (size before relaxing)
- .debug_str     0x00001071       0x9e MddleLayer/BaseTask.o
+ .debug_str     0x00000fce       0x9e MddleLayer/BaseTask.o
                                 0x248 (size before relaxing)
- .debug_str     0x0000110f      0x124 MddleLayer/DebugHandler.o
+ .debug_str     0x0000106c      0x124 MddleLayer/DebugHandler.o
                                 0x266 (size before relaxing)
- .debug_str     0x00001233       0x2e MddleLayer/EepromStructure.o
+ .debug_str     0x00001190       0x2e MddleLayer/EepromStructure.o
                                 0x14b (size before relaxing)
- .debug_str     0x00001261       0xbc MddleLayer/MaxDisp.o
+ .debug_str     0x000011be       0xbc MddleLayer/MaxDisp.o
                                 0x2a1 (size before relaxing)
- .debug_str     0x0000131d       0x8b MddleLayer/NVM_Handler.o
+ .debug_str     0x0000127a       0x94 MddleLayer/NVM_Handler.o
                                 0x223 (size before relaxing)
- .debug_str     0x000013a8       0x41 MddleLayer/SignalHandler.o
+ .debug_str     0x0000130e       0x41 MddleLayer/SignalHandler.o
                                 0x12a (size before relaxing)
- .debug_str     0x000013e9       0x74 MddleLayer/UartTransmit.o
-                                0x2f5 (size before relaxing)
- .debug_str     0x0000145d      0x157 OS/EventQ.o
+ .debug_str     0x0000134f       0x74 MddleLayer/UartTransmit.o
+                                0x263 (size before relaxing)
+ .debug_str     0x000013c3      0x157 OS/EventQ.o
                                 0x2c5 (size before relaxing)
- .debug_str     0x000015b4       0xe3 OS/GccApplication1.o
+ .debug_str     0x0000151a       0xd2 OS/GccApplication1.o
                                 0x381 (size before relaxing)
- .debug_str     0x00001697       0x27 OS/OSRR.o
+ .debug_str     0x000015ec       0x27 OS/OSRR.o
                                 0x1a9 (size before relaxing)
- .debug_str     0x000016be      0x262 OS/Task.o
-                                0x78c (size before relaxing)
- .debug_str     0x00001920      0x18f OS/Taskadd.o
+ .debug_str     0x00001613      0x262 OS/Task.o
+                                0x6fb (size before relaxing)
+ .debug_str     0x00001875      0x18f OS/Taskadd.o
                                 0x42f (size before relaxing)
- .debug_str     0x00001aaf       0xa7 RTE ASW/Rte_ASW.o
+ .debug_str     0x00001a04       0xa7 RTE ASW/Rte_ASW.o
                                 0x195 (size before relaxing)
- .debug_str     0x00001b56       0x64 RTE Base/RTE_BSW.o
+ .debug_str     0x00001aab       0x64 RTE Base/RTE_BSW.o
                                 0x19a (size before relaxing)
- .debug_str     0x00001bba       0xbf RTE Base/Rte_Uart.o
+ .debug_str     0x00001b0f       0xbf RTE Base/Rte_Uart.o
                                 0x240 (size before relaxing)
- .debug_str     0x00001c79       0x20 RTE Middle/RTE_MiddleLayer.o
+ .debug_str     0x00001bce       0x20 RTE Middle/RTE_MiddleLayer.o
                                 0x198 (size before relaxing)
- .debug_str     0x00001c99       0xef c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .debug_str     0x00001bee       0xef c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
                                 0x17c (size before relaxing)
 
-.debug_loc      0x00000000     0x43be
+.debug_loc      0x00000000     0x431a
  *(.debug_loc)
  .debug_loc     0x00000000       0x65 ASW/BlinkCode.o
- .debug_loc     0x00000065      0x89b ASW/ESP8266.o
- .debug_loc     0x00000900       0xae ASW/Routines.o
- .debug_loc     0x000009ae      0x108 ASW/StringOp.o
- .debug_loc     0x00000ab6       0x48 ASW/UartHandler.o
- .debug_loc     0x00000afe       0x92 BaseLayer/ADC.o
- .debug_loc     0x00000b90       0xf6 BaseLayer/CircularQueue.o
- .debug_loc     0x00000c86      0x15c BaseLayer/ExtInterrupt.o
- .debug_loc     0x00000de2      0x990 BaseLayer/I2C.o
- .debug_loc     0x00001772      0x114 BaseLayer/NVM.o
- .debug_loc     0x00001886      0x1fe BaseLayer/pinout.o
- .debug_loc     0x00001a84       0x9b BaseLayer/SPI.o
- .debug_loc     0x00001b1f       0x6b BaseLayer/Timer2.o
- .debug_loc     0x00001b8a      0x5db BaseLayer/UART.o
- .debug_loc     0x00002165      0x1cb MddleLayer/ADCread.o
- .debug_loc     0x00002330       0x90 MddleLayer/BaseTask.o
- .debug_loc     0x000023c0      0x46a MddleLayer/DebugHandler.o
- .debug_loc     0x0000282a      0x25a MddleLayer/MaxDisp.o
- .debug_loc     0x00002a84      0x1da MddleLayer/NVM_Handler.o
- .debug_loc     0x00002c5e      0x113 MddleLayer/SignalHandler.o
- .debug_loc     0x00002d71       0x90 MddleLayer/UartTransmit.o
- .debug_loc     0x00002e01      0x514 OS/EventQ.o
- .debug_loc     0x00003315       0xf7 OS/GccApplication1.o
- .debug_loc     0x0000340c       0x68 OS/OSRR.o
- .debug_loc     0x00003474      0x529 OS/Task.o
- .debug_loc     0x0000399d      0x2e7 OS/Taskadd.o
- .debug_loc     0x00003c84       0x72 RTE ASW/Rte_ASW.o
- .debug_loc     0x00003cf6      0x138 RTE Base/RTE_BSW.o
- .debug_loc     0x00003e2e       0x26 RTE Base/Rte_Uart.o
- .debug_loc     0x00003e54       0x72 RTE Middle/RTE_MiddleLayer.o
- .debug_loc     0x00003ec6      0x4f8 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .debug_loc     0x00000065      0x8af ASW/ESP8266.o
+ .debug_loc     0x00000914       0xae ASW/Routines.o
+ .debug_loc     0x000009c2      0x108 ASW/StringOp.o
+ .debug_loc     0x00000aca       0x48 ASW/UartHandler.o
+ .debug_loc     0x00000b12       0x92 BaseLayer/ADC.o
+ .debug_loc     0x00000ba4       0xf6 BaseLayer/CircularQueue.o
+ .debug_loc     0x00000c9a      0x15c BaseLayer/ExtInterrupt.o
+ .debug_loc     0x00000df6      0x990 BaseLayer/I2C.o
+ .debug_loc     0x00001786      0x114 BaseLayer/NVM.o
+ .debug_loc     0x0000189a      0x1fe BaseLayer/pinout.o
+ .debug_loc     0x00001a98       0x9b BaseLayer/SPI.o
+ .debug_loc     0x00001b33       0x6b BaseLayer/Timer2.o
+ .debug_loc     0x00001b9e      0x57c BaseLayer/UART.o
+ .debug_loc     0x0000211a      0x1cb MddleLayer/ADCread.o
+ .debug_loc     0x000022e5       0x90 MddleLayer/BaseTask.o
+ .debug_loc     0x00002375      0x46a MddleLayer/DebugHandler.o
+ .debug_loc     0x000027df      0x25a MddleLayer/MaxDisp.o
+ .debug_loc     0x00002a39      0x154 MddleLayer/NVM_Handler.o
+ .debug_loc     0x00002b8d      0x113 MddleLayer/SignalHandler.o
+ .debug_loc     0x00002ca0       0x73 MddleLayer/UartTransmit.o
+ .debug_loc     0x00002d13      0x514 OS/EventQ.o
+ .debug_loc     0x00003227       0xf7 OS/GccApplication1.o
+ .debug_loc     0x0000331e       0x68 OS/OSRR.o
+ .debug_loc     0x00003386      0x573 OS/Task.o
+ .debug_loc     0x000038f9      0x2e7 OS/Taskadd.o
+ .debug_loc     0x00003be0       0x72 RTE ASW/Rte_ASW.o
+ .debug_loc     0x00003c52      0x138 RTE Base/RTE_BSW.o
+ .debug_loc     0x00003d8a       0x26 RTE Base/Rte_Uart.o
+ .debug_loc     0x00003db0       0x72 RTE Middle/RTE_MiddleLayer.o
+ .debug_loc     0x00003e22      0x4f8 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a(malloc.o)
 
 .debug_macinfo
  *(.debug_macinfo)

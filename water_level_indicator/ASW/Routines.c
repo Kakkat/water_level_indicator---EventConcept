@@ -72,12 +72,12 @@ static void  DebugBufferCheck()
 		   {
 			 //AddEvent((uint8_t *)&DebugArray[3],DebugArray[0]); 
 			 //uart_num((uint8_t)(DebugArray[2]-'0'));
-			 StoreNVM((uint8_t)(DebugArray[2]-'0'),&DebugArray[2],0);
+			 ///StoreNVM((uint8_t)(DebugArray[2]-'0'),&DebugArray[2],0);
 			 uart_string("IAM");
 		   }
 		   else if (DebugArray[1]=='2')
 		   {
-		     StoreNVM((uint8_t)(DebugArray[2]-'0'),&DebugArray[2],1);
+		     //StoreNVM((uint8_t)(DebugArray[2]-'0'),&DebugArray[2],1);
 		   }
 		  break;
 	  

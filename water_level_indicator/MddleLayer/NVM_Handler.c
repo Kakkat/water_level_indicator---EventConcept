@@ -27,7 +27,7 @@ if(NVMProcess==0)
    NVMDataArray[5]=((uint8_t*)(&TEMP))[1];
    NVMDataArray[6]=ID;
    NVMDataArray[7]=ReadorWrite;
-   PushEventInterface(52,1,NVMDataArray,0);	
+   //PushEventInterface(52,1,NVMDataArray,0);	
  }
 }
 static uint32_t NVMdat=200; 
