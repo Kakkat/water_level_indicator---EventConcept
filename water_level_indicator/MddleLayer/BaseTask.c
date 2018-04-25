@@ -7,16 +7,29 @@
 #include "..\BaseLayer\ExtInterrupt.h"
 #include "..\BaseLayer\UART.h"
 #include "..\BaseLayer\pinout.h"
+#include "..\BaseLayer\SSDi2cHandler.h"
+
 uint16_t BaseTask1(void)
 {
 	uint16_t PulseData=0;
-	static uint8_t CountTaskTime;
-   // uart_string("start\n");
+	static uint8_t CountTaskTime,BTF;
 	PulseData=InterfacePulse(PulseData);
-	//uart_num(((uint8_t*)(&PulseData))[1]);
 	if(((uint8_t*)(&PulseData))[1]==0x80 || ((uint8_t*)(&PulseData))[1]==0x00 )
 	{
-		((uint8_t*)(&PulseData))[0]=CountTaskTime++;
+		//CountTaskTime=CountTaskTime+2;
+		if(CountTaskTime>127)
+		{
+			BTF=1;
+		}
+		if(BTF==1)
+		{
+			CountTaskTime=CountTaskTime-2;
+		}
+		else
+		{
+			CountTaskTime=CountTaskTime+2;
+		}
+		((uint8_t*)(&PulseData))[0]=CountTaskTime;
 		return PulseData;
 	}
     else
@@ -36,7 +49,6 @@ uint16_t BaseTask2(void)
 	uint16_t RetVal;
 	static uint8_t ButtonCount,previousButtonVal,currenButtonvalue,SuccessCount;
 	PinValue(&value,PIN_OUT3,B );
-	//uart_num(value);
 	if(value==previousButtonVal)
 	{
 		ButtonCount++;
@@ -64,12 +76,28 @@ uint16_t BaseTask2(void)
 		((uint8_t *)&RetVal)[1]=0x03;
 	}
     ((uint8_t *)&RetVal)[0]=currenButtonvalue;
-	
-	//uart_string("\n");
 	return RetVal;
 }
 
 uint16_t BaseTask2Open(void)
 {
 	return 0;
+}
+
+uint16_t SSDtask(void)
+{
+	SSDi2cHandlerFunc(0);
+	return 0xfffff;
+}
+uint16_t Testtask(void)
+{
+	static uint8_t count;
+	count++;
+	if(1)
+	{
+		count=0;
+		testfuc(0);
+	}
+	
+	return 0xfffff;
 }

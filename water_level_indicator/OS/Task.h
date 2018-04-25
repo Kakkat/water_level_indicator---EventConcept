@@ -26,4 +26,5 @@ uint16_t task4Open(void);
 uint16_t task5Open(void);
 uint16_t task6Open(void);
 void HookupTasks(uint8_t *);
+uint16_t TaskFrames();
 #endif /* TASK_H_ */

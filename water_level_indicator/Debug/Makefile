@@ -56,6 +56,7 @@ C_SRCS +=  \
 ../BaseLayer/NVM.c \
 ../BaseLayer/pinout.c \
 ../BaseLayer/SPI.c \
+../BaseLayer/SSDi2cHandler.c \
 ../BaseLayer/Timer2.c \
 ../BaseLayer/UART.c \
 ../MddleLayer/ADCread.c \
@@ -66,6 +67,7 @@ C_SRCS +=  \
 ../MddleLayer/MaxDisp.c \
 ../MddleLayer/NVM_Handler.c \
 ../MddleLayer/SignalHandler.c \
+../MddleLayer/SSDdataHandler.c \
 ../MddleLayer/UartTransmit.c \
 ../OS/EventQ.c \
 ../OS/GccApplication1.c \
@@ -98,6 +100,7 @@ BaseLayer/I2C.o \
 BaseLayer/NVM.o \
 BaseLayer/pinout.o \
 BaseLayer/SPI.o \
+BaseLayer/SSDi2cHandler.o \
 BaseLayer/Timer2.o \
 BaseLayer/UART.o \
 MddleLayer/ADCread.o \
@@ -108,6 +111,7 @@ MddleLayer/EepromStructure.o \
 MddleLayer/MaxDisp.o \
 MddleLayer/NVM_Handler.o \
 MddleLayer/SignalHandler.o \
+MddleLayer/SSDdataHandler.o \
 MddleLayer/UartTransmit.o \
 OS/EventQ.o \
 OS/GccApplication1.o \
@@ -133,6 +137,7 @@ BaseLayer/I2C.o \
 BaseLayer/NVM.o \
 BaseLayer/pinout.o \
 BaseLayer/SPI.o \
+BaseLayer/SSDi2cHandler.o \
 BaseLayer/Timer2.o \
 BaseLayer/UART.o \
 MddleLayer/ADCread.o \
@@ -143,6 +148,7 @@ MddleLayer/EepromStructure.o \
 MddleLayer/MaxDisp.o \
 MddleLayer/NVM_Handler.o \
 MddleLayer/SignalHandler.o \
+MddleLayer/SSDdataHandler.o \
 MddleLayer/UartTransmit.o \
 OS/EventQ.o \
 OS/GccApplication1.o \
@@ -168,6 +174,7 @@ BaseLayer/I2C.d \
 BaseLayer/NVM.d \
 BaseLayer/pinout.d \
 BaseLayer/SPI.d \
+BaseLayer/SSDi2cHandler.d \
 BaseLayer/Timer2.d \
 BaseLayer/UART.d \
 MddleLayer/ADCread.d \
@@ -178,6 +185,7 @@ MddleLayer/EepromStructure.d \
 MddleLayer/MaxDisp.d \
 MddleLayer/NVM_Handler.d \
 MddleLayer/SignalHandler.d \
+MddleLayer/SSDdataHandler.d \
 MddleLayer/UartTransmit.d \
 OS/EventQ.d \
 OS/GccApplication1.d \
@@ -203,6 +211,7 @@ BaseLayer/I2C.d \
 BaseLayer/NVM.d \
 BaseLayer/pinout.d \
 BaseLayer/SPI.d \
+BaseLayer/SSDi2cHandler.d \
 BaseLayer/Timer2.d \
 BaseLayer/UART.d \
 MddleLayer/ADCread.d \
@@ -213,6 +222,7 @@ MddleLayer/EepromStructure.d \
 MddleLayer/MaxDisp.d \
 MddleLayer/NVM_Handler.d \
 MddleLayer/SignalHandler.d \
+MddleLayer/SSDdataHandler.d \
 MddleLayer/UartTransmit.d \
 OS/EventQ.d \
 OS/GccApplication1.d \
@@ -235,6 +245,10 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 LIB_DEP+= 
 
 # AVR32/GNU C Compiler
+
+
+
+
 
 
 

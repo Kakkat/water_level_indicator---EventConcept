@@ -28,6 +28,8 @@ BaseLayer\pinout.c
 
 BaseLayer\SPI.c
 
+BaseLayer\SSDi2cHandler.c
+
 BaseLayer\Timer2.c
 
 BaseLayer\UART.c
@@ -47,6 +49,8 @@ MddleLayer\MaxDisp.c
 MddleLayer\NVM_Handler.c
 
 MddleLayer\SignalHandler.c
+
+MddleLayer\SSDdataHandler.c
 
 MddleLayer\UartTransmit.c
 

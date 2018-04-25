@@ -32,6 +32,7 @@ OS/GccApplication1.d OS/GccApplication1.o: ../OS/GccApplication1.c \
  ../OS/..\RTE\ ASW\..\BaseLayer\../RTE\ Base/..\ASW\..\BaseLayer\CircularQueue.h \
  ../OS/..\RTE\ ASW\..\BaseLayer\../RTE\ Base/..\ASW\..\BaseLayer\../RTE\ Base/Rte_Uart.h \
  ../OS/..\BaseLayer\ADC.h ../OS/..\BaseLayer\I2C.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.2.1002\avr8-gnu-toolchain\bin\../lib/gcc/avr/4.7.2/../../../../avr/include/avr/pgmspace.h \
  ../OS/..\BaseLayer\NVM.h ../OS/Events.h \
  ../OS/..\MddleLayer\EepromStructure.h
 
@@ -112,6 +113,8 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.2.1002\avr8
 ../OS/..\BaseLayer\ADC.h:
 
 ../OS/..\BaseLayer\I2C.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.2.1002\avr8-gnu-toolchain\bin\../lib/gcc/avr/4.7.2/../../../../avr/include/avr/pgmspace.h:
 
 ../OS/..\BaseLayer\NVM.h:
 

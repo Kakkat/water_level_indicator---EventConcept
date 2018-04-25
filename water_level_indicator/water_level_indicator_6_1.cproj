@@ -27,15 +27,15 @@
     <eraseonlaunchrule>0</eraseonlaunchrule>
     <AsfFrameworkConfig>
       <framework-data>
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.3.0" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.3.0" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
     <avrtool>
     </avrtool>
@@ -194,6 +194,12 @@
     <Compile Include="BaseLayer\SPI.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="BaseLayer\SSDi2cHandler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BaseLayer\SSDi2cHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="BaseLayer\Timer2.c">
       <SubType>compile</SubType>
     </Compile>
@@ -252,6 +258,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MddleLayer\SignalHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MddleLayer\SSDdataHandler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MddleLayer\SSDdataHandler.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MddleLayer\UartTransmit.c">

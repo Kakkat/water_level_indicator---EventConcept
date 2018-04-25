@@ -21,8 +21,10 @@ OS/Task.d OS/Task.o: ../OS/Task.c ../OS/Task.h \
  ../OS/..\BaseLayer\NVM.h ../OS/..\MddleLayer\MaxDisp.h \
  ../OS/..\ASW\StringOp.h ../OS/..\MddleLayer\NVM_Handler.h \
  ../OS/..\MddleLayer\EepromStructure.h ../OS/..\MddleLayer\..\OS\EventQ.h \
- ../OS/..\MddleLayer\DebugHandler.h ../OS/..\BaseLayer\Timer2.h \
- ../OS/..\BaseLayer\UART.h ../OS/..\BaseLayer\CircularQueue.h \
+ ../OS/..\MddleLayer\DebugHandler.h ../OS/..\MddleLayer\SSDdataHandler.h \
+ ../OS/..\MddleLayer\..\BaseLayer\CircularQueue.h \
+ ../OS/..\BaseLayer\Timer2.h ../OS/..\BaseLayer\UART.h \
+ ../OS/..\BaseLayer\CircularQueue.h \
  ../OS/..\BaseLayer\../RTE\ Base/Rte_Uart.h \
  ../OS/..\BaseLayer\../RTE\ Base/..\RTE\ Middle\Rte_types.h \
  ../OS/..\BaseLayer\../RTE\ Base/..\ASW\UartHandler.h \
@@ -90,6 +92,10 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.2.1002\avr8
 ../OS/..\MddleLayer\..\OS\EventQ.h:
 
 ../OS/..\MddleLayer\DebugHandler.h:
+
+../OS/..\MddleLayer\SSDdataHandler.h:
+
+../OS/..\MddleLayer\..\BaseLayer\CircularQueue.h:
 
 ../OS/..\BaseLayer\Timer2.h:
 

@@ -8,6 +8,7 @@
 #include "..\BaseLayer\UART.h"
 #include "UartTransmit.h"
 #include "DebugHandler.h"
+#include "SSDdataHandler.h"
 uint8_t Datastore[20];
 typedef uint8_t (*PopFuncPointer) (char*);
 uint8_t charHex[]={0,1,2,3,4,5,6,7,8,9,0x0a,0x0b,0x0c,0x0d,0x0e,0x0F};
@@ -159,10 +160,14 @@ uint16_t ReadRambyte(void *Ptr)
 	uint8_t *address;
 	address=((uint8_t*)((uint16_t)(((uint8_t*)Ptr)[5]<<8)|((uint8_t*)Ptr)[4]));
 	FillUartBufferSiglechar('\n');
+	PopulateSSDbuffer("Value:",3,5);
 	for(i=0;i<((uint8_t*)Ptr)[6];i++)
 	{
 		FillUartBufferSiglechar(HexChar[((address[0]&0XF0)>>4)]);
 		FillUartBufferSiglechar(HexChar[(address[0]&0X0F)]);
+		PopulateSSDbufferChar(HexChar[((address[0]&0XF0)>>4)],0,0);
+		PopulateSSDbufferChar(HexChar[(address[0]&0X0F)],0,0);
+		PopulateSSDbufferChar(' ',0,0);
 		FillUartBufferSiglechar(' ');
 		address++;
 	}

@@ -47,6 +47,7 @@ enum eTask
  eTask5,
  eTask6,
  eTask7,
+ eTask8,
  eTaskEndoflist	
 };
 uint16_t tasks(void);
