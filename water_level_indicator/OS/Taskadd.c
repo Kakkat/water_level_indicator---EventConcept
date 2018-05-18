@@ -22,7 +22,7 @@ task taskfunc[8] = {{task1,task1Open,dTask1Time,dOFF,0},
 				   {task4,task4Open,dTask4Time,dON,0},
 				   {task5,task5Open,dTask5Time,dON,0},
 				   {TaskFrames,task2Open,dTask5Time,dON,0},
-				   {TransmitBufferEmpty,TransmitBufferEmpty,dTask1Time,dOFF,0},
+				   {TransmitBufferEmpty,TransmitBufferEmpty,dTask1Time,dON,0},
 				   {tasksBase,tasksBase,dTask1Time,dON,0}};
 					   
 task taskfuncbase[3] = {{BaseTask1,BaseTask1Open,1,dOFF,0},

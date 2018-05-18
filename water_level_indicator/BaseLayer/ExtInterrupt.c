@@ -19,7 +19,7 @@ void ExtIntInit()
 
 ISR (INT0_vect)
 {   
-	//uart_string("nIKHIL");
+	
 	if(Start==0)
 	{
 		Timer2Enable();
@@ -68,7 +68,7 @@ uint16_t InterfacePulse(uint16_t Pulse)
 	static uint8_t timeout=0;
 	uint8_t *Data=&Pulse;
     
-	if(timeout>1)
+	if(timeout>2)
 	{
 		changeIntLogic(1);
 		TriggerUltraSonic();

@@ -34,6 +34,8 @@ static uint16_t TankSize;
 static uint8_t EspConnected;
 typedef uint16_t  (*funPtrDebug)(void *);
 uint16_t TaskImageRendering(void);
+static uint8_t SwitchPressed;
+static void BlinkSelection(uint8_t posx,uint8_t posy,unsigned char * datstring);
 //Esp_Index=Mode_Command;
 //Site[36]=name;
 //background-color:#757575;height;100%;position:absolute;line-height:inherit;width:62%" ><center><span style="color:white">62</span></center></div></body></html>";
@@ -51,11 +53,11 @@ uint16_t task1(void)
     time1=time1+1;
     if(Init_Flag==0)
     {
-        InitMax();
+        //InitMax();
         Init_Flag=1;
         TankSize=10000/124;
     }
-    DispChar(0x0d,7);
+    //DispChar(0x0d,7);
     if(time1==10)
     {   //ssd1036_chumma();
 
@@ -85,7 +87,7 @@ uint16_t task1(void)
             COUNT=0;
             PinOutput(0,PIN_OUT7,D);
         }
-        DispDigits(Out);
+        //DispDigits(Out);
         //DispDigits(COUNT);
 
         //PinOutput(Toggle,PIN_OUT1,B);
@@ -232,7 +234,7 @@ uint16_t task2(void)
 			val[3]='\0';
 			num2CharArray(arr[0],val);
 			val[3]='\0';
-			//PopulateSSDbuffer(val,0,4);
+			//TODO//PopulateSSDbuffer(val,0,1);
 			//PopulateSSDbuffer("=L",arr[0],3);
             SetBlink(PIN_OUT1,0x1000,B);
             Errorcount=0;
@@ -262,16 +264,11 @@ uint16_t task2(void)
 uint16_t task3(void)
 {
     Blink();
-	static uint8_t countts,countts2,limit=110;
-	countts++;
-    if(CaliberateDistanceValues(SensorValue)==0)
-    {
-        RTE_WriteBufferUart("Sensor calibrated");
-    }
-
+	static uint8_t countts2,limit=110;
+	static uint16_t countts;
 
 	//ssd1306_String_font6x8(val,112,0);
-	if(countts>3)
+/*	if(countts>3)
 	{
 		countts2++;
 
@@ -286,7 +283,7 @@ uint16_t task3(void)
 			countts2=0;
 		}
 		countts=0;
-	}
+	}*/
 	//
 
 		
@@ -303,19 +300,40 @@ uint16_t task4(void)
     arr[1]=1;
     arr[2]=2;
     ((uint16_t*)arr)[0]=SignalHandlerFunc(arr);
-    char val[4]	;
-    if(arr[0])
+	      // RTE_WriteBufferUart("\n");
+			char val[4]="255";
+
+    if(arr[1]==2)
     {
         //RTE_WriteBufferUart("data1");
-        // uart_string("ON\n");
+		uart_num(arr[0]);
+        uart_string("ON\n");
+        switch (arr[0])
+        {
+	        case 1:
+			 SwitchPressed=1;
+	        /* Your code here */
+	        break;
+			case 2:
+			 SwitchPressed=2;
+			 break;
+			case 3:
+			 SwitchPressed=3;
+	        default:
+	        /* Your code here */
+	        break;
+        }
+		
         SWITCHCOUNT++;
     }
-    if(SWITCHCOUNT>200)
+    if(SWITCHCOUNT>2)
     {
-        //uart_string("data1:\n");
-        //uart_num(arr[0]);
+      // uart_string("data1:\n");
+       // uart_num(arr[0]);
+
         SWITCHCOUNT=0;
     }
+
     /* PinValue(&value,PIN_OUT3,B );
 
      if(value==1)
@@ -332,7 +350,7 @@ uint16_t task4(void)
     countTask4++;
     if(countTask4>=100)
     {
-        hours.OperatingHours++;
+       // hours.OperatingHours++;
         //StoreNVM(Nvm_OH,(uint8_t*)&hours,0);;
         countTask4=0;
         //uart_num(countSize());
@@ -346,7 +364,7 @@ uint16_t task5(void)
     if(f.LargestValue==201)
     {
         //StoreNVM(Nvm_Ping,&f,1);
-        hours.OperatingHours++;
+       // hours.OperatingHours++;
         //StoreNVM(Nvm_OH,(uint8_t*)&hours,0);
         //NVMTask();
         //StoreNVM(Nvm_TankOverflow,(uint8_t*)&hours,0);
@@ -507,7 +525,8 @@ uint16_t task2Open(void)
 {
 
     //uart_string("In open 2");
-    PinOutConfig(1,PIN_OUT2,B);
+    PinOutConfig(0,PIN_OUT2,B);
+	PinOutput(1,PIN_OUT2,B);
     PinOutConfig(1,PIN_OUT1,B);
     PinOutConfig(1,PIN_OUT8,D);
 
@@ -547,28 +566,28 @@ uint16_t task5Open(void)
     Address=task6;
     ESPCallBack(&Address);
     OutPutVariableRegister(&SensorValue,1,0);
-    i2c_init();
+    /*i2c_init();
     uart_num(i2c_start(0x78));
     uart_num(ssd1036_Init());
    uart_num(ssd1036_chumma());
-    for(uint16_t i=0;i<1024;i++)
+   for(uint16_t i=0;i<1024;i++)
     {
     	ssd1036_chumma();
-    }
+    }*/
 
-    ssd1306_String_font6x8("Water Level",0,0);
+     /*ssd1306_String_font6x8("Water Level",0,0);
     ssd1306_String_font6x8("Controller",68,1);
     _delay_ms(20000);
     	for(uint16_t i=0;i<1024;i++)
     	{
     		ssd1036_chumma();
     	}
-
+*/
     //ssd1306_Rectangle(0,5);
    // ssd1306_String_font6x8("Menu",0,7);
     //ssd1306_String_font6x8("Back",(127-6*4),7);
-    //uart_string("In open 5");
-    /*while(NvmReadSync(Nvm_OH,&hours)!=0)
+    uart_string("In open 5");
+    while(NvmReadSync(Nvm_OH,&hours)!=0)
     {
 
     }
@@ -578,8 +597,10 @@ uint16_t task5Open(void)
     uart_num(point[0]);
     uart_num(point[1]);
     uart_num(point[2]);
-    uart_num(point[3]);*/
-	//PopulateSSDbuffer("Wifi",0,1);
+    uart_num(point[3]);
+	hours.OperatingHours=0x01020304;
+	StoreNVM(Nvm_OH,(uint8_t*)&hours,0);
+	//PopulateSSDbuffer("555",0,1);
 	//PopulateSSDbuffer("Tank level:",0,3);
 	
     static Nvm_T_TankOverflow Tankov;
@@ -618,7 +639,7 @@ uint16_t task6Open(void)
 
 static void FilterUltrasonic(uint8_t Distance)
 {
-    static uint16_t value, previousvalue=0,offset,onebyk;
+    static uint16_t value, previousvalue=0,offset,onebyk,settlecount;
     uint16_t multiplier;
     onebyk=181;
     //value=(Distance+previousvalue);
@@ -669,31 +690,47 @@ static void FilterUltrasonic(uint8_t Distance)
     previousvalue=value;
     Sigout=(uint8_t)previousvalue;
     SensorValue=(uint8_t)previousvalue;
-
+	if(settlecount>100)
+	{
+      if(CaliberateDistanceValues(SensorValue)==0)
+	  {
+		  PopulateSSDbuffer("C ",96,0);;
+	  }
+	  else
+	  {
+		 PopulateSSDbuffer("C!",96,0); 
+	  }
+	}
+	else
+	{
+		settlecount++;
+	}
     //uart_num(Sigout);
     quality=100;
     //uart_string("\n");
 }
 static uint8_t CaliberateDistanceValues(uint8_t Pingvalue)
 {
-    static uint8_t PreviousValue,PingCount;
-    if(PreviousValue>=3 && Pingvalue!=255)
+    static uint8_t PreviousValue=3,PingCount;
+    if(PreviousValue>=3 && Pingvalue!=255 && Pingvalue!=0)
     {
         if(Pingvalue>=(PreviousValue+3) && Pingvalue<=(PreviousValue-3))
         {
-            PreviousValue=Pingvalue;
             PingCount=PingCount-1;
         }
         else
         {
             PingCount++;
+			PreviousValue=Pingvalue;
             if(PingCount>=20)
             {
                 PingCount=0;
+				PreviousValue=3;
                 return 0;
             }
         }
     }
+	
     return 1;
 }
 void HookupTasks(uint8_t * event1)
@@ -730,7 +767,7 @@ static void num2CharArray(unsigned char num,unsigned char *Ustring)
 }
 
 
-uint16_t TaskFrames()
+/*uint16_t TaskFrames()
 {
 	static uint8_t FrameNo,FrameTime;
 	char val[4]="255";
@@ -748,7 +785,12 @@ uint16_t TaskFrames()
 		if(FrameTime>250)
 		{               
 			FrameTime=0;
-			FrameNo++;
+			if(SwitchPressed==1)
+			{
+				FrameNo++;
+				SwitchPressed=0;
+			}
+			
 		}
 		break;
 		case 2:
@@ -757,13 +799,400 @@ uint16_t TaskFrames()
 		break;
 		case 3:
 		FrameTime++;
+		if(SwitchPressed==2||SwitchPressed==3)
+		{
+			SSDSetFramePos(2);
+			SwitchPressed=0;
+			//FrameNo=4;
+		}
 		if(FrameTime>50)
 		{
 			FrameTime=0;
-			FrameNo=4;
-		}		 
+			if(SwitchPressed==1)
+			{
+				FrameNo=2;
+				SwitchPressed=0;
+			}
+			//FrameNo=4;
+		}	
+		break;
+		case 4:	 
+		
+		default:
+		/* Your code here */
+		//break;
+	//}
+//}*/
+		
+uint16_t TaskFrames()
+{
+	static uint8_t FrameNo,SubframeNo,SubSubframe;
+	char val[4]="255";
+	switch (FrameNo)
+	{
+		case 0:
+		SSDSetFramePos(0);
+		FrameNo++;
+		break;
+		case 1:
+		num2CharArray(SensorValue,val);
+		val[3]='\0';
+		PopulateSSDbuffer(val,66,2);
+		if(SwitchPressed==1)
+		{
+			FrameNo++;
+			SwitchPressed=0;
+		}
+		break;
+		case 2:
+		SSDSetFramePos(1);
+		FrameNo++;
+		break;
+		case 3:
+		switch (SubframeNo)
+		{
+			case 0:
+			if(SwitchPressed==1)
+			{
+				PopulateSSDbuffer("#",0,2);
+				SubframeNo++;
+				SwitchPressed=0;
+			}
+			break;
+			case 1:
+			BlinkSelection(0,2,"1");
+			if(SwitchPressed==2||SwitchPressed==3)
+			{
+				//FrameNo=2;
+				SubframeNo=2;
+				SSDSetFramePos(2);
+				SwitchPressed=0;
+			}
+			else if(SwitchPressed==1)
+			{
+				SubframeNo=3;
+				SwitchPressed=0;
+				PopulateSSDbuffer("1",0,2);
+			}
+			break;
+			case 2:
+			switch (SubSubframe)
+			{
+				case 0:
+				if(SwitchPressed==1)
+				{
+					SwitchPressed=0;
+					SubSubframe++;
+				}
+				break;
+				case 1:
+				
+				if(SwitchPressed==2||SwitchPressed==3)
+				{
+					PopulateSSDbuffer("o",60,2);
+					SwitchPressed=0;
+					SubSubframe=4;
+				}
+				else if(SwitchPressed==1)
+				{
+					SwitchPressed=0;
+					SubSubframe++;
+					PopulateSSDbuffer("1",0,2);
+				}
+				else
+				{
+					BlinkSelection(0,2,"1");
+				}
+				break;
+				case 2:if(SwitchPressed==2||SwitchPressed==3)
+				{
+					PopulateSSDbuffer("o",60,3);
+					SwitchPressed=0;
+					SubSubframe=4;
+				}
+				else if(SwitchPressed==1)
+				{
+					SwitchPressed=0;
+					SubSubframe++;
+					PopulateSSDbuffer("2",0,3);
+				}
+				else
+				{
+					BlinkSelection(0,3,"2");
+				}
+				break;
+				case 3:
+				if(SwitchPressed==2||SwitchPressed==3)
+				{
+					PopulateSSDbuffer("o",60,4);
+					SwitchPressed=0;
+					SubSubframe=4;
+				}
+				else if(SwitchPressed==1)
+				{
+					SwitchPressed=0;
+					SubSubframe++;
+					PopulateSSDbuffer("3",0,4);
+				}
+				else
+				{
+					BlinkSelection(0,4,"3");
+				}
+				break;
+				case 4:
+				if(SwitchPressed==2||SwitchPressed==3)
+				{
+					FrameNo=2;
+					SubframeNo=0;
+					SwitchPressed=0;
+					SubSubframe=0;
+				}
+				else if(SwitchPressed==1)
+				{
+					SwitchPressed=0;
+					SubSubframe=0;
+					PopulateSSDbuffer("BACK",48,7);
+				}
+				else
+				{
+					BlinkSelection(48,7,"BACK ");
+				}
+				break;
+				default:
+				/*Your code here */
+				break;
+			}
+			break;
+			case 3:
+			BlinkSelection(0,3,"2");
+			if(SwitchPressed==2||SwitchPressed==3)
+			{
+				//FrameNo=2;
+				SubframeNo=4;
+				SubSubframe=0;
+				SSDSetFramePos(3);
+				SwitchPressed=0;
+			}
+			else if(SwitchPressed==1)
+			{
+				SwitchPressed=0;
+				SubframeNo=5;
+				PopulateSSDbuffer("2",0,3);
+			}
+			break;
+			case 4:
+			switch (SubSubframe)
+			{
+				case 0:
+				if(SwitchPressed==1)
+				{
+					SwitchPressed=0;
+					SubSubframe++;
+				}
+				break;
+				case 1:
+				
+				if(SwitchPressed==2||SwitchPressed==3)
+				{
+					PopulateSSDbuffer("o",60,2);
+					
+					SwitchPressed=0;
+					SubSubframe=3;
+				}
+				else if(SwitchPressed==1)
+				{
+					SwitchPressed=0;
+					SubSubframe++;
+					PopulateSSDbuffer("1",0,2);
+				}
+				else
+				{
+					BlinkSelection(0,2,"1");
+				}
+				break;
+				case 2:if(SwitchPressed==2||SwitchPressed==3)
+				{
+					PopulateSSDbuffer("o",60,3);
+					SwitchPressed=0;
+					SubSubframe=3;
+				}
+				else if(SwitchPressed==1)
+				{
+					SwitchPressed=0;
+					SubSubframe++;
+					PopulateSSDbuffer("2",0,3);
+				}
+				else
+				{
+					BlinkSelection(0,3,"2");
+				}
+				break;
+				case 3:
+				if(SwitchPressed==2||SwitchPressed==3)
+				{
+					FrameNo=2;
+					SubframeNo=0;
+					SwitchPressed=0;
+					SubSubframe=0;
+				}
+				else if(SwitchPressed==1)
+				{
+					SwitchPressed=0;
+					SubSubframe=0;
+					PopulateSSDbuffer("BACK",48,7);
+				}
+				else
+				{
+					BlinkSelection(48,7,"BACK ");
+				}
+				break;
+				default:
+				/*Your code here */
+				break;
+			}
+			break;			
+			case 5:
+			BlinkSelection(0,4,"3");
+			if(SwitchPressed==2||SwitchPressed==3)
+			{
+				//FrameNo=2;
+				SubframeNo=6;
+				SubSubframe=0;
+				SSDSetFramePos(4);
+				SwitchPressed=0;
+			}
+			else if(SwitchPressed==1)
+			{
+				SwitchPressed=0;
+				SubframeNo=7;
+				PopulateSSDbuffer("3",0,4);
+			}
+			break;
+			case 6:
+						switch (SubSubframe)
+						{
+							case 0:
+							if(SwitchPressed==1)
+							{
+								SwitchPressed=0;
+								SubSubframe++;
+							}
+							break;
+							case 1:
+							
+							if(SwitchPressed==2||SwitchPressed==3)
+							{
+								PopulateSSDbuffer("o",60,2);
+								hours.OperatingHours=0x01020304;
+								StoreNVM(Nvm_OH,(uint8_t*)&hours,0);
+								SwitchPressed=0;
+								SubSubframe=3;
+							}
+							else if(SwitchPressed==1)
+							{
+								SwitchPressed=0;
+								SubSubframe++;
+								PopulateSSDbuffer("1",0,2);
+							}
+							else
+							{
+								BlinkSelection(0,2,"1");
+							}
+							break;
+							case 2:if(SwitchPressed==2||SwitchPressed==3)
+							{
+								PopulateSSDbuffer("o",60,3);
+								StoreNVM(Nvm_OH,(uint8_t*)&hours,1);
+								SwitchPressed=0;
+								SubSubframe=3;
+							}
+							else if(SwitchPressed==1)
+							{
+								SwitchPressed=0;
+								SubSubframe++;
+								PopulateSSDbuffer("2",0,3);
+							}
+							else
+							{
+								BlinkSelection(0,3,"2");
+							}
+							break;
+							case 3:
+							if(SwitchPressed==2||SwitchPressed==3)
+							{
+								FrameNo=2;
+								SubframeNo=0;
+								SwitchPressed=0;
+								SubSubframe=0;
+							}
+							else if(SwitchPressed==1)
+							{
+								SwitchPressed=0;
+								SubSubframe=0;
+								PopulateSSDbuffer("BACK",48,7);
+							}
+							else
+							{
+								BlinkSelection(48,7,"BACK ");
+							}
+							break;
+							default:
+							/*Your code here */
+							break;
+						}
+						break;
+			case 7:
+			
+			BlinkSelection(48,7,"BACK ");
+			if(SwitchPressed==2||SwitchPressed==3)
+			{
+				//FrameNo=2;
+				SubframeNo=0;
+				SubSubframe=0;
+				SwitchPressed=0;
+				FrameNo=0;
+			}
+			if(SwitchPressed==1)
+			{
+				SwitchPressed=0;
+				SubframeNo=0;
+				PopulateSSDbuffer("BACK",48,7);
+			}
+			default:
+			/* Your code here */
+			break;
+		}
 		default:
 		/* Your code here */
 		break;
 	}
+	return 0;
 }
+static void BlinkSelection(uint8_t posx,uint8_t posy,unsigned char * datstring)
+{
+	static uint8_t Blinka;
+	uint8_t i=0;
+	char FillSpace[6];
+	while(datstring[i]!='\0')
+	{
+		FillSpace[i]=' ';
+		i++;
+	}
+	FillSpace[i]='\0';
+	if(Blinka==0)
+	{
+		PopulateSSDbuffer(FillSpace,posx,posy);
+		Blinka++;
+	}
+	else
+	{
+		Blinka++;
+		if(Blinka==50)
+		{
+			PopulateSSDbuffer(datstring,posx,posy);
+			Blinka=200;
+		}
+	}
+
+}
+

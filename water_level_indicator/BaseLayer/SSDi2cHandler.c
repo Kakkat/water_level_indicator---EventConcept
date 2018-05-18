@@ -13,120 +13,116 @@
 #include "..\MddleLayer\SSDdataHandler.h"
 static uint8_t FramePos,ssdpos;
 const char FrameBlank[] PROGMEM="          ";
-/*Frame1 start*/
-const char F1FROW1[] PROGMEM ="WIFI";
-const char F1FROW2[] PROGMEM ="";
-const char F1FROW3[] PROGMEM ="Tank Level :";
-const char F1FROW4[] PROGMEM ="";
-const char F1FROW5[] PROGMEM ="";
-const char F1FROW6[] PROGMEM ="";
-const char F1FROW7[] PROGMEM ="";
-const char F1FROW8[] PROGMEM ="";
-const char F1SROW1[] PROGMEM ="";
-const char F1SROW2[] PROGMEM ="";
-const char F1SROW3[] PROGMEM ="";
-const char F1SROW4[] PROGMEM ="";
-const char F1SROW5[] PROGMEM ="";
-const char F1SROW6[] PROGMEM ="";
-const char F1SROW7[] PROGMEM ="";
-const char F1SROW8[] PROGMEM ="Menu";
-const char F1MROW1[] PROGMEM ="";
-const char F1MROW2[] PROGMEM ="";
-const char F1MROW3[] PROGMEM ="";
-const char F1MROW4[] PROGMEM ="";
-const char F1MROW5[] PROGMEM ="";
-const char F1MROW6[] PROGMEM ="";
-const char F1MROW7[] PROGMEM ="";
-const char F1MROW8[] PROGMEM ="";
-/*Frame1 over*/
+/*------------------FRAME1-------------------------*/
+const char F1ROW1[] PROGMEM ="        WLC          ";
+//                           "                     ";
+const char F1ROW3[] PROGMEM ="Tank Level :         ";
+//                           "                     ";
+//                           "                     ";
+//                           "                     ";
+//                           "                     ";
+const char F1ROW8[] PROGMEM ="        MENU         ";
 
-/*Frame2 start*/
-const char F2FROW1[] PROGMEM ="WIFI";
-const char F2FROW2[] PROGMEM ="";
-const char F2FROW3[] PROGMEM =" 1.Settings";
-const char F2FROW4[] PROGMEM =" 2.Motor";
-const char F2FROW5[] PROGMEM =" 3.Debug";
-const char F2FROW6[] PROGMEM =" 4.Sensor state";
-const char F2FROW7[] PROGMEM ="";
-const char F2FROW8[] PROGMEM ="";
-const char F2SROW1[] PROGMEM ="";
-const char F2SROW2[] PROGMEM ="";
-const char F2SROW3[] PROGMEM ="";
-const char F2SROW4[] PROGMEM ="";
-const char F2SROW5[] PROGMEM ="";
-const char F2SROW6[] PROGMEM ="";
-const char F2SROW7[] PROGMEM ="";
-const char F2SROW8[] PROGMEM ="BACK";
-const char F2MROW1[] PROGMEM ="";
-const char F2MROW2[] PROGMEM ="";
-const char F2MROW3[] PROGMEM ="";
-const char F2MROW4[] PROGMEM ="";
-const char F2MROW5[] PROGMEM ="";
-const char F2MROW6[] PROGMEM ="";
-const char F2MROW7[] PROGMEM ="";
-const char F2MROW8[] PROGMEM ="";
-/*Frame2 over*/
+/*------------------FRAME2-------------------------*/
+const char F2ROW1[] PROGMEM ="        MENU         ";
+//                           "                     ";
+const char F2ROW3[] PROGMEM ="1.Mode               ";
+const char F2ROW4[] PROGMEM ="2.Motor              ";
+const char F2ROW5[] PROGMEM ="3.Daig               ";
+//                           "                     ";
+//                           "                     ";
+const char F2ROW8[] PROGMEM ="        BACK         ";
 
-const uint16_t Frame1[] PROGMEM=
-{
-	F1FROW1,
-	F1FROW2,
-	F1FROW3,
-	F1FROW4,
-	F1FROW5,
-	F1FROW6,
-	F1FROW7,
-	F1FROW8,
-	F1SROW1,
-	F1SROW2,
-	F1SROW3,
-	F1SROW4,
-	F1SROW5,
-	F1SROW6,
-	F1SROW7,
-	F1SROW8,
-	F1MROW1,
-	F1MROW2,
-	F1MROW3,
-	F1MROW4,
-	F1MROW5,
-	F1MROW6,
-	F1MROW7,
-	F1MROW8 
+/*------------------FRAME3-------------------------*/
+const char F3ROW1[] PROGMEM ="        Mode         ";
+//                           "                     ";
+const char F3ROW3[] PROGMEM ="1.Manual             ";
+const char F3ROW4[] PROGMEM ="2.Auto               ";
+const char F3ROW5[] PROGMEM ="3.Semi               ";
+//                           "                     ";
+//                           "                     ";
+const char F3ROW8[] PROGMEM ="        BACK         ";
+
+/*------------------FRAME4-------------------------*/
+const char F4ROW1[] PROGMEM ="        Motor        ";
+//                           "                     ";
+const char F4ROW3[] PROGMEM ="1.OFF                ";
+const char F4ROW4[] PROGMEM ="2.ON                 ";
+//                           "                     ";
+//                           "                     ";
+//                           "                     ";
+const char F4ROW8[] PROGMEM ="        BACK         ";
+
+/*------------------FRAME5-------------------------*/
+const char F5ROW1[] PROGMEM ="        Daig         ";
+//                           "                     ";
+const char F5ROW3[] PROGMEM ="1.Opr Hr             ";
+const char F5ROW4[] PROGMEM ="2.Full Tank Cnt      ";
+//                           "                     ";
+//                           "                     ";
+//                           "                     ";
+const char F5ROW8[] PROGMEM ="        BACK         ";
+
+
+const uint16_t Frame1[] PROGMEM= {
+	F1ROW1,
+	FrameBlank,
+	F1ROW3,
+	FrameBlank,
+	FrameBlank,
+	FrameBlank,
+	FrameBlank,
+	F1ROW8,
+};
+const uint16_t Frame2[] PROGMEM= {
+	F2ROW1,
+	FrameBlank,
+	F2ROW3,
+	F2ROW4,
+	F2ROW5,
+	FrameBlank,
+	FrameBlank,
+	F2ROW8,
+};
+const uint16_t Frame3[] PROGMEM= {
+	F3ROW1,
+	FrameBlank,
+	F3ROW3,
+	F3ROW4,
+	F3ROW5,
+	FrameBlank,
+	FrameBlank,
+	F3ROW8,
+};
+const uint16_t Frame4[] PROGMEM= {
+	F4ROW1,
+	FrameBlank,
+	F4ROW3,
+	F4ROW4,
+	FrameBlank,
+	FrameBlank,
+	FrameBlank,
+	F4ROW8,
+};
+const uint16_t Frame5[] PROGMEM= {
+	F5ROW1,
+	FrameBlank,
+	F5ROW3,
+	F5ROW4,
+	FrameBlank,
+	FrameBlank,
+	FrameBlank,
+	F5ROW8,
 };
 
-const uint16_t Frame2[] PROGMEM=
-{
-	F2FROW1,
-	FrameBlank,
-	F2FROW3,
-	F2FROW4,
-	F2FROW5,
-	F2FROW6,
-	FrameBlank,
-	FrameBlank,
-	FrameBlank,
-	FrameBlank,
-	FrameBlank,
-	F2SROW4,
-	F2SROW5,
-	F2SROW6,
-	F2SROW7,
-	F2SROW8,
-	F2MROW1,
-	F2MROW2,
-	F2MROW3,
-	F2MROW4,
-	F2MROW5,
-	F2MROW6,
-	F2MROW7,
-	F2MROW8
-};
 
 const uint16_t Frames[] PROGMEM=
 {
 	&Frame1,
-	&Frame2
+	&Frame2,
+	&Frame3,
+	&Frame4,
+	&Frame5,
 };
 static uint8_t ssdposy=1,ssdposx,Unknown;
 static uint8_t ErasePoints[5]={0};
@@ -412,7 +408,7 @@ uint8_t testfuc(void * data)
    char buffer[25];
    uint16_t address=0;
    
-   if(ssdpos<24)
+   if(ssdpos<8)
    {
 
 	//strcpy_P(buffer,(PGM_P)pgm_read_word(Frame1+ssdpos));  
@@ -420,7 +416,6 @@ uint8_t testfuc(void * data)
 	 address=(pgm_read_word(&Frames[FramePos])+(ssdpos*2));
 	 strcpy_P(buffer,(PGM_P)pgm_read_word(address));
 	 PopulateSSDbuffer(buffer,ssdposy,ssdposx);
-	 
 	 ssdposx++;
 	 ssdpos++;
    }
@@ -443,20 +438,8 @@ uint8_t SSDSetFramePos(uint8_t Pos)
     ssdposx=0;
 	return 0;
 }
-/*uint8_t SSDBlankCodset(uint8_t x1,uint8_t y1,uint8_t x2,uint8_t y2)
+
+uint8_t SSDfullLitup()
 {
-	if(ErasePoints[4]==0)
-	{
-	  	ErasePoints[0]=x1;
-	  	ErasePoints[1]=y1;
-	  	ErasePoints[2]=x2;
-	  	ErasePoints[3]=y2;
-		ErasePoints[4]=1;	
-		return 1;
-	}
-    else
-	{
-		return 0;
-	}
-	
-}*/
+	return 0;
+}

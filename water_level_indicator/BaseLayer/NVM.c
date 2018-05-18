@@ -23,7 +23,7 @@ ISR(EE_READY_vect)
 {
 	/*check if not end of string and address
 	didn't reach end of EEPROM*/
-	
+	static uint8_t deom;
 	if(WriteorRead==0)
 	{
 		//uart_num(eepromaddress);
@@ -35,8 +35,9 @@ ISR(EE_READY_vect)
 		EEAR=eepromaddress++;
 		//loads current byte and increments index for next load
 		WriteSize--;
+		uart_string("write\n");
 		EEDR=message[WriteSize];
-		//uart_num(message[WriteSize]);
+		uart_num(message[WriteSize]);
 		//master write enable
 		EECR|=(1<<EEMPE);
 		//strobe eeprom write
@@ -55,6 +56,7 @@ ISR(EE_READY_vect)
 	if(eepromaddress<=(eepromaddressCopy))
 	{
 		NVMState=1;
+		uart_string("read\n");
 		EEAR=eepromaddress++;
 		EECR|=(1<<EERE);
 		message[IndexNvmCount]=EEDR;
@@ -76,7 +78,7 @@ ISR(EE_READY_vect)
 void NvmPopulateWriteSize(uint8_t size,uint8_t startadd,uint8_t WriteorRead1,uint8_t *ptr)
 {
 	WriteSize=size;
-	eepromaddress=startadd;
+	eepromaddress=0;//startadd;
 	WriteorRead=WriteorRead1;
 	message=ptr;
 	eepromaddressCopy=(eepromaddress+WriteSize)-1;

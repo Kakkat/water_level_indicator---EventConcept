@@ -6,6 +6,7 @@
  */ 
 
 #define F_CPU 16000000UL
+#include "..\BaseLayer\pinout.h"
 #define value={{task1},{task2},{task3},}
 #include "OSRR.h"
 #include <avr/io.h>
@@ -55,6 +56,7 @@ ISR(TIMER0_OVF_vect){
 	//TCNT0=70;
 	TCNT0=0;
 	counter5ms++;
+
 }
 void set_timer(uint16_t enable)
 {
@@ -98,6 +100,8 @@ uart_init();
 	//sei();
 	//pin
 	set_timer(1);
+	PCICR |=(1<<PCIE0);
+	PCMSK0 |=(1<<PCINT0);
     //EECR |= (1<<EERIE);
     //adddummyevent(str);
 	//adddummyevent(str1);
@@ -208,4 +212,10 @@ static void adddummyevent(uint8_t *pt)
 		lasttestev=testev1;
 		//uart_string(testev1->ptr);
 	}
+}
+
+ISR(PCINT0_vect)
+{
+				PinOutput(1,PIN_OUT7,D);
+				//_delay_ms(2000);
 }
