@@ -25,11 +25,23 @@ typedef struct
 	uint8_t Tank;
 }Nvm_T_TankOverflow;
 
+typedef struct
+{
+	uint8_t Threshold;
+}Nvm_T_TankOverflowLevel;
+
+typedef struct
+{
+	uint8_t TankHeight;
+}Nvm_T_TankHeight;
+
 typedef enum
 {
 	Nvm_Ping,
 	Nvm_OH,
 	Nvm_TankOverflow,
+	Nvm_TankOverflowLevel,
+	Nvm_TankHeight,
 	Nvm_EndOflist
 }Nvm_Id;
 

@@ -572,7 +572,7 @@ void Uart_DebugMode(void)
 uint8_t ESPpop(char *Bytex)
 {
 	static uint8_t PosByte;
-	EspDataBuffer[30]='!';
+    EspDataBuffer[30]='!';
 	*Bytex=EspDataBuffer[PosByte+7];
 	if(PosByte==23)
 	{
@@ -594,7 +594,15 @@ void ESPCallBack(void *fillcallback)
 	EspDataBuffer[29]=mediator[1];
 
 }
-
+void EmulateMessage()
+{
+	EspDataBuffer[28]=0;
+	EspDataBuffer[29]=0;
+	EspDataBuffer[7]='B';
+	EspDataBuffer[8]='D';
+	EspDataBuffer[9]='0';
+	EspDataBuffer[10]='1';
+}
 static void num2CharArrayESP(unsigned char num,unsigned char *Ustring)
 {
 	unsigned char H=0,T=0,O=0;

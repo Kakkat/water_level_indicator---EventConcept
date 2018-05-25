@@ -30,13 +30,11 @@ if(NVMProcess==0)
    nnn++;
    uint8_t* extemp;
    extemp=((uint16_t*)(NVMDataArray+4))[0];//((uint16_t)(NVMDataArray[5]<<8)|NVMDataArray[4]);//0x0257;//(((uint16_t*) NVMDataArray[4])[0]);
-   uart_string("data\n");
 	/*	uart_num(extemp[0]);
 		uart_num(extemp[1]);
 		uart_num(extemp[2]);
 		uart_num(extemp[3]);*/
    PushEventInterface(52,1,NVMDataArray,0);	
-   uart_string("here");
  }
 }
 static uint32_t NVMdat=200; 
@@ -45,6 +43,7 @@ uint16_t NVMTask(void *NvmData)
 	//uart_string("in nvm");
 	uint8_t state;
 	uint8_t *NVMDataPtr;
+	uint8_t* extemp;
 	NVMDataPtr=(uint8_t *)NvmData;
 	state=GetNVMState();
 	//uart_num(state);
@@ -53,21 +52,22 @@ uint16_t NVMTask(void *NvmData)
 	{
 	     //CurrentEvent()->EEid
 		//uart_string("IN nvm task");
-		 uint8_t* extemp;
-		 extemp=((uint16_t*)(NVMDataPtr+4))[0];
+		 
+		
+	    extemp=((uint16_t*)(NVMDataPtr+4))[0];
 		NvmPopulateWriteSize(Nvm_Table_t[NVMDataPtr[6]].Nvm_Size,Nvm_Table_t[NVMDataPtr[6]].Id,NVMDataPtr[7],extemp);
-   	/*	uart_num(extemp[0]);
-   		uart_num(extemp[1]);
-   		uart_num(extemp[2]);
-   		uart_num(extemp[3]);*/
 		SwitchNvmOn();
 		NVMProcess=1;
 	    return 1;
 	}
 	else if(state==2 && NVMProcess==1)
 	{
+		extemp=((uint16_t*)(NVMDataPtr+4))[0];
+		uart_num(extemp[0]);
+		uart_num(extemp[1]);
+		uart_num(extemp[2]);
+		uart_num(extemp[3]);
 	    NVMDataArray[1]=0;
-		uart_string("IN nvm task END");
 		PushEventInterface(52,1,NVMDataArray,0);
         NVMProcess=0;
 	    return 0;

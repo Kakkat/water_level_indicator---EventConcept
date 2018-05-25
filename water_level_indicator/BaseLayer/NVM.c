@@ -35,9 +35,7 @@ ISR(EE_READY_vect)
 		EEAR=eepromaddress++;
 		//loads current byte and increments index for next load
 		WriteSize--;
-		uart_string("write\n");
 		EEDR=message[WriteSize];
-		uart_num(message[WriteSize]);
 		//master write enable
 		EECR|=(1<<EEMPE);
 		//strobe eeprom write
@@ -56,17 +54,16 @@ ISR(EE_READY_vect)
 	if(eepromaddress<=(eepromaddressCopy))
 	{
 		NVMState=1;
-		uart_string("read\n");
 		EEAR=eepromaddress++;
 		EECR|=(1<<EERE);
 		message[IndexNvmCount]=EEDR;
-		uart_num(message[IndexNvmCount]);
+		//uart_num(message[IndexNvmCount]);
 		IndexNvmCount--;
 	}
 		else
 		{
 			//disable eeprom ready interrupt
-			uart_string("switch read");
+			//uart_string("switch read");
 			SwitchNvmOff();
 			IndexNvmCount=0;
 			eepromaddressCopy=0;
@@ -78,7 +75,7 @@ ISR(EE_READY_vect)
 void NvmPopulateWriteSize(uint8_t size,uint8_t startadd,uint8_t WriteorRead1,uint8_t *ptr)
 {
 	WriteSize=size;
-	eepromaddress=0;//startadd;
+	eepromaddress=startadd;
 	WriteorRead=WriteorRead1;
 	message=ptr;
 	eepromaddressCopy=(eepromaddress+WriteSize)-1;

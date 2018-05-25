@@ -27,7 +27,7 @@ uint16_t DebugHandlerFunc(void *fptr)
 	
 	while((*((PopFuncPointer)fptr))(&data)==0)
 	{
-		
+		uart_char(data);
 		if(i<10)
 	{
 		if(k==0)
@@ -119,7 +119,9 @@ uint16_t DebugHandlerFunc(void *fptr)
 	}
 	else if(Pos[0]==0xbd)
 	{
+		
 		TEMP=ReadRambyte;
+		uart_num(Pos[1]);
         Datastore[0]=0;
         Datastore[1]=1;
         Datastore[2]=((uint8_t*)(&TEMP))[0];
@@ -129,10 +131,20 @@ uint16_t DebugHandlerFunc(void *fptr)
         Datastore[6]=VariableManager_t[Pos[1]].VariableSize;
         Datastore[12]=VariableManager_t[Pos[1]].VariableSize;
 	}
+	
 	if(data=='!')
 	{
 	  argp1=(argp *)(((uint16_t*)(Pos+11))[0]);
-	  PushEventInterface(201,argp1,Datastore,0);
+	  if(argp1!=0)
+	  {
+		  PushEventInterface(201,argp1,Datastore,0);
+	  }
+	  else
+	  {
+		  
+		  PushEventInterface(52,1,Datastore,0);
+	  }
+	  
 	}
 	else
 	{

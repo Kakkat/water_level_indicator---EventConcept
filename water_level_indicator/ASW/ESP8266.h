@@ -82,4 +82,5 @@ volatile uint8_t UartEvents;
 void Uart_DebugMode(void);
 uint8_t ESPpop(char *Bytex);
 void ESPCallBack(void *fillcallback);
+void EmulateMessage();
 #endif /* ESP8266_H_ */

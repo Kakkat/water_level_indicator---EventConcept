@@ -120,8 +120,9 @@ uint16_t NonPeriodicTaskFuncCall( )
 		for(int i=0;i<5;i++)
 		{
 			tasktime++;
-			if(NonPeriodictaskArr[i].On==dON&&tasktime>900  )
+			if(NonPeriodictaskArr[i].On==dON &&tasktime>900)
 			{
+				
 				NonPeriodictaskArr[i].taskfucntion(NonPeriodictaskArr[i].ptr);	
 				tasktime=0;			
 			}
